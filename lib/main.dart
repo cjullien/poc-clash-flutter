@@ -25,7 +25,6 @@ class _MyAppState extends State<MyApp> {
   final List<Person> persons = [
     Person(name: "test"),
     Person(name: "test2"),
-    Person(name: "test3"),
   ];
   String errorMsg = "";
 
@@ -37,6 +36,7 @@ class _MyAppState extends State<MyApp> {
   void getData() {
     futureDynamic
         .then((resultList) => setState(() {
+              persons.add(Person(name: "test3"));
               persons.addAll(jsonDecode(resultList).map((Map<String, dynamic> p) {
                 return Person.fromJson(p);
               }).toList());
