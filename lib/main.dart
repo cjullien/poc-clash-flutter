@@ -10,13 +10,6 @@ import 'FuturGeneric.dart';
 
 void main() => runApp(const MyApp());
 
-final List<Person> persons = [
-  Person(name: "test"),
-  Person(name: "test2"),
-  Person(name: "test3"),
-];
-String errorMsg = "";
-
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -29,6 +22,12 @@ class _MyAppState extends State<MyApp> {
     const Duration(seconds: 4),
     () => http.get(Uri.parse(_constantes.Url.url1)),
   );
+  final List<Person> persons = [
+    Person(name: "test"),
+    Person(name: "test2"),
+    Person(name: "test3"),
+  ];
+  String errorMsg = "";
 
   _MyAppState() {
     getData();
