@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
         .then((resultList) => setState(() {
               persons.add(Person(name: "test"));
               persons.add(Person(name: "$resultList"));
-              persons.addAll(jsonDecode(resultList).foreach((p) => Person.fromJson(p)).toList());
+              persons.addAll(List<Person>.from(resultList.map((model) => Person.fromJson(model))));
             }))
         .catchError((error) {
       errorMsg = error.toString();
