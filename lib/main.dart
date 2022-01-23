@@ -22,10 +22,7 @@ class _MyAppState extends State<MyApp> {
     const Duration(seconds: 4),
     () => fetchDynamic(),
   );
-  final List<Person> persons = [
-    Person(name: "test"),
-    Person(name: "test2"),
-  ];
+  final List<Person> persons = [];
   String errorMsg = "";
 
   _MyAppState() {
@@ -36,8 +33,8 @@ class _MyAppState extends State<MyApp> {
   void getData() {
     futureDynamic
         .then((resultList) => setState(() {
-              persons.add(Person(name: "test3"));
-              persons.addAll(jsonDecode(resultList).map((Map<String, dynamic> p) {
+              persons.add(Person(name: "test"));
+              persons.addAll(resultList.map((Map<String, dynamic> p) {
                 return Person.fromJson(p);
               }).toList());
             }))
