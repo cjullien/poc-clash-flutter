@@ -1,6 +1,3 @@
-import 'package:lombok/lombok.dart';
-
-@data
 class Person {
   final String firstname;
   final String name;
@@ -14,5 +11,9 @@ class Person {
       name: json['name'],
       email: json['email'],
     );
+  }
+
+  toString() {
+    return "Person { name : $name }";
   }
 }
