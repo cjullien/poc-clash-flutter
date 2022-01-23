@@ -55,20 +55,69 @@ class _MyAppState extends State<MyApp> {
                       return ListView(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         children: persons
-                            .map((p) => Container(
-                                      height: 200,
-                                      width: 200,
-                                      child: Card(
-                                        child: ListTile(
-                                          title: Text("Codesinsider.com"),
+                            .map(
+                              (p) => Card(
+                                child: Container(
+                                  height: 100,
+                                  color: Colors.white,
+                                  child: Row(
+                                    children: [
+                                      Center(
+                                        child: Padding(
+                                          padding: EdgeInsets.all(10),
+                                          child: Expanded(
+                                            child: Image.asset("assets/images/shape_of_you.png"),
+                                            flex: 2,
+                                          ),
                                         ),
-                                        elevation: 8,
-                                        shadowColor: Colors.green,
-                                        margin: EdgeInsets.all(20),
                                       ),
-                                    )
+                                      Expanded(
+                                        child: Container(
+                                          alignment: Alignment.topLeft,
+                                          child: Column(
+                                            children: [
+                                              Expanded(
+                                                flex: 5,
+                                                child: ListTile(
+                                                  title: Text("Shape Of You"),
+                                                  subtitle: Text("Ed Sheeran"),
+                                                ),
+                                              ),
+                                              Expanded(
+                                                flex: 5,
+                                                child: Row(
+                                                  mainAxisAlignment: MainAxisAlignment.end,
+                                                  children: [
+                                                    TextButton(
+                                                      child: Text("PLAY"),
+                                                      onPressed: () {},
+                                                    ),
+                                                    SizedBox(
+                                                      width: 8,
+                                                    ),
+                                                    TextButton(
+                                                      child: Text("ADD TO QUEUE"),
+                                                      onPressed: () {},
+                                                    ),
+                                                    SizedBox(
+                                                      width: 8,
+                                                    )
+                                                  ],
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        flex: 8,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                elevation: 8,
+                                margin: EdgeInsets.all(10),
+                              ),
 
-                                /* Text.rich(
+                              /* Text.rich(
                                 TextSpan(
                                   text: ' - ', // default text style
                                   children: <InlineSpan>[
@@ -80,7 +129,7 @@ class _MyAppState extends State<MyApp> {
                                   ],
                                 ),
                               ),*/
-                                )
+                            )
                             .toList(),
                       );
                     }))));
