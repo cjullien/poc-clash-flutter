@@ -1,10 +1,9 @@
 import 'dart:async';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
 
 import 'Constantes.dart' as _constantes;
+import 'MemoryImageWidget.dart';
 import 'Person.dart';
 import 'FuturGeneric.dart';
 
@@ -66,7 +65,7 @@ class _MyAppState extends State<MyApp> {
                                         child: Padding(
                                           padding: EdgeInsets.all(10),
                                           child: Expanded(
-                                            child: Image.asset("assets/images/shape_of_you.png"),
+                                            child: MemoryImageWidget(),
                                             flex: 2,
                                           ),
                                         ),
