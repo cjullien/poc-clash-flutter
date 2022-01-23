@@ -53,6 +53,7 @@ class _MyAppState extends State<MyApp> {
                     future: futureDynamic,
                     builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
                       return ListView(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
                         children: persons
                             .map(
                               (p) => Text.rich(
@@ -61,6 +62,7 @@ class _MyAppState extends State<MyApp> {
                                   children: <TextSpan>[
                                     TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
                                     TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold)),
+                                    TextSpan(text: '${p.email}', style: TextStyle(fontWeight: FontWeight.bold)),
                                   ],
                                 ),
                               ),
