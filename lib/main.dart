@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
                                     TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
                                     TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold)),
                                     WidgetSpan(
-                                      child: Icon(Icons.add),
+                                      child: Icon(Icons.email_outlined),
                                     ),
                                   ],
                                 ),
