@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
                             .map(
                               (p) => Text(
                                 '$p.firstname - $p.name',
-                                style: TextStyle(fontSize: 20),
+                                style: TextStyle(fontSize: 30),
                               ),
                             )
                             .toList(),
