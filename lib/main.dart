@@ -17,20 +17,6 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
-class TooltipSpan extends WidgetSpan {
-  TooltipSpan({
-    @required String message,
-    @required InlineSpan inlineSpan,
-  }) : super(
-          child: Tooltip(
-            message: message,
-            child: Text.rich(
-              inlineSpan,
-            ),
-          ),
-        );
-}
-
 class _MyAppState extends State<MyApp> {
   late Future<dynamic> futureDynamic = Future<dynamic>.delayed(
     const Duration(seconds: 4),
@@ -69,21 +55,27 @@ class _MyAppState extends State<MyApp> {
                       return ListView(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         children: persons
-                            .map(
-                              (p) => Text.rich(
-                                TextSpan(
-                                  text: ' - ', // default text style
-                                  children: <TextSpan>[
-                                    TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
-                                    TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold)),
-                                    TooltipSpan(
-                                      message: "any text here",
-                                      inlineSpan: TextSpan(text: "Flutter"),
+                            .map((p) => {
+                                  Text.rich(
+                                    TextSpan(
+                                      text: ' - ', // default text style
+                                      children: <TextSpan>[
+                                        TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
+                                        TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold))
+                                      ],
                                     ),
-                                  ],
-                                ),
-                              ),
-                            )
+                                  ),
+                                  Tooltip(
+                                    message: 'Text',
+                                    child: Text(
+                                      'Flutter is an open-source UI software development kit created by Google. ',
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 25,
+                                      ), //TextStyle
+                                    ), //Text
+                                  )
+                                })
                             .toList(),
                       );
                     }))));
