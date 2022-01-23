@@ -17,6 +17,20 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
+class TooltipSpan extends WidgetSpan {
+  TooltipSpan({
+    @required String message,
+    @required InlineSpan inlineSpan,
+  }) : super(
+          child: Tooltip(
+            message: message,
+            child: Text.rich(
+              inlineSpan,
+            ),
+          ),
+        );
+}
+
 class _MyAppState extends State<MyApp> {
   late Future<dynamic> futureDynamic = Future<dynamic>.delayed(
     const Duration(seconds: 4),
