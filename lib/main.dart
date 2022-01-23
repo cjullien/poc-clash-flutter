@@ -59,10 +59,7 @@ class _MyAppState extends State<MyApp> {
                               (p) => Text.rich(
                                 TextSpan(
                                   text: ' - ', // default text style
-                                  children: <TextSpan>[
-                                    TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
-                                    TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold)),
-                                  ], <TextSpan>[
+                                  children: <InlineSpan>[
                                     TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
                                     TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold)),
                                   ],
