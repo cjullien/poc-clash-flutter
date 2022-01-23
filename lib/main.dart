@@ -55,27 +55,27 @@ class _MyAppState extends State<MyApp> {
                       return ListView(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         children: persons
-                            .map((p) => {
-                                  Text.rich(
-                                    TextSpan(
-                                      text: ' - ', // default text style
-                                      children: <TextSpan>[
-                                        TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
-                                        TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold))
-                                      ],
-                                    ),
-                                  ),
-                                  Tooltip(
-                                    message: 'Text',
-                                    child: Text(
-                                      'Flutter is an open-source UI software development kit created by Google. ',
-                                      style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 25,
-                                      ), //TextStyle
-                                    ), //Text
-                                  )
-                                })
+                            .map(
+                              (p) => Text.rich(
+                                TextSpan(
+                                  text: ' - ', // default text style
+                                  children: <TextSpan>[
+                                    TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
+                                    TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold)),
+                                    WidgetSpan(Tooltip(
+                                      message: 'Text',
+                                      child: Text(
+                                        'Flutter is an open-source UI software development kit created by Google. ',
+                                        style: TextStyle(
+                                          color: Colors.grey,
+                                          fontSize: 25,
+                                        ), //TextStyle
+                                      ), //Text
+                                    ))
+                                  ],
+                                ),
+                              ),
+                            )
                             .toList(),
                       );
                     }))));
