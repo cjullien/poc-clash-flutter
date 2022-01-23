@@ -55,8 +55,20 @@ class _MyAppState extends State<MyApp> {
                       return ListView(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         children: persons
-                            .map(
-                              (p) => Text.rich(
+                            .map((p) => Container(
+                                      height: 200,
+                                      width: 200,
+                                      child: Card(
+                                        child: ListTile(
+                                          title: Text("Codesinsider.com"),
+                                        ),
+                                        elevation: 8,
+                                        shadowColor: Colors.green,
+                                        margin: EdgeInsets.all(20),
+                                      ),
+                                    )
+
+                                /* Text.rich(
                                 TextSpan(
                                   text: ' - ', // default text style
                                   children: <InlineSpan>[
@@ -67,8 +79,8 @@ class _MyAppState extends State<MyApp> {
                                     ),
                                   ],
                                 ),
-                              ),
-                            )
+                              ),*/
+                                )
                             .toList(),
                       );
                     }))));
