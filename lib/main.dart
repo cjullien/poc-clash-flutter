@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
   void getData() {
     futureDynamic
         .then((resultList) => setState(() {
-              persons.add(Person(name: "test"));
+              persons.add(Person(name: "$resultList"));
               persons.addAll(resultList.map((Map<String, dynamic> p) {
                 return Person.fromJson(p);
               }).toList());
