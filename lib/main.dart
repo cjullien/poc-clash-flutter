@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
                         children: persons
                             .map(
                               (p) => Text(
-                                'Person: $p',
+                                '$p.firstname - $p.name',
                                 style: TextStyle(fontSize: 20),
                               ),
                             )
