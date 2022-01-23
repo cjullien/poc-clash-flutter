@@ -13,7 +13,7 @@ class Person {
     );
   }
 
-  toString() {
+  /*toString() {
     return "Person { firstname: $firstname , name: $name, email: $email }";
-  }
+  }*/
 }
