@@ -62,6 +62,12 @@ class _MyAppState extends State<MyApp> {
                                   children: <InlineSpan>[
                                     TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
                                     TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold)),
+                                    WidgetSpan(
+                                        child: SizedBox(
+                                      width: 120,
+                                      height: 50,
+                                      child: Card(child: Center(child: Text('Hello World!'))),
+                                    ))
                                   ],
                                 ),
                               ),
