@@ -62,6 +62,7 @@ class _MyAppState extends State<MyApp> {
                                   children: <TextSpan>[
                                     TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
                                     TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold)),
+                                  ],
                                     Tooltip(
                                       message: 'Text',
                                       child: Text(
@@ -72,7 +73,6 @@ class _MyAppState extends State<MyApp> {
                                         ), //TextStyle
                                       ), //Text
                                     )
-                                  ],
                                 ),
                               ),
                             )
