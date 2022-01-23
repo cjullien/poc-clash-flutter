@@ -57,23 +57,18 @@ class _MyAppState extends State<MyApp> {
                         children: persons
                             .map(
                               (p) => Text.rich(
-                                  TextSpan(
-                                    text: ' - ', // default text style
-                                    children: <TextSpan>[
-                                      TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
-                                      TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold)),
-                                    ],
-                                  ),
-                                  Tooltip(
-                                    message: 'Text',
-                                    child: Text(
-                                      'Flutter is an open-source UI software development kit created by Google. ',
-                                      style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 25,
-                                      ), //TextStyle
-                                    ), //Text
-                                  )),
+                                TextSpan(
+                                  text: ' - ', // default text style
+                                  children: <TextSpan>[
+                                    TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
+                                    TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold)),
+                                    TooltipSpan(
+                                      message: "any text here",
+                                      inlineSpan: TextSpan(text: "Flutter"),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             )
                             .toList(),
                       );
