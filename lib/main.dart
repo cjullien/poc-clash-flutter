@@ -1,100 +1,103 @@
-import 'dart:async';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-
 import 'package:flutter/material.dart';
-
-import 'Constantes.dart' as _constantes;
-import 'Person.dart';
-import 'FuturGeneric.dart';
 
 void main() => runApp(const MyApp());
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  late Future<dynamic> futureDynamic = Future<dynamic>.delayed(
-    const Duration(seconds: 4),
-    () => http.get(Uri.parse(_constantes.Url.url1)),
-  );
-  final List<Person> persons = [
-    Person(name: "test"),
-    Person(name: "test2"),
-  ];
-  String errorMsg = "";
-
-  _MyAppState() {
-    getData();
-    super.initState();
-  }
-
-  void getData() {
-    futureDynamic
-        .then((resultList) => setState(() {
-              persons.add(Person(name: "test3"));
-              persons.addAll(jsonDecode(resultList).map((Map<String, dynamic> p) {
-                return Person.fromJson(p);
-              }).toList());
-            }))
-        .catchError((error) {
-      errorMsg = error.toString();
-    });
-  }
+  static const String _title = 'Async Example using FutureBuilder';
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: _constantes.App.title,
-        home: Scaffold(
-            appBar: AppBar(
-              title: const Text(_constantes.App.title),
-            ),
-            body: Center(
-                child: FutureBuilder<dynamic>(
-                    future: futureDynamic,
-                    builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-                      return ListView(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        children: persons
-                            .map(
-                              (p) => Text(
-                                'Person: $p',
-                                style: TextStyle(fontSize: 20),
-                              ),
-                            )
-                            .toList(),
-                      );
-                    }))));
-  }
-}
-
-/*class MyFuturWidget extends StatelessWidget {
-  late Future<dynamic> futureDynamic;
-
-  MyFuturWidget() {
-    futureDynamic = fetchDynamic();
-  }
-
-  Widget build(BuildContext context) {
-    return FutureBuilder<dynamic>(
-      future: futureDynamic,
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          var resultList = List<Map<String, dynamic>>.from(snapshot.data);
-          persons.addAll(resultList.map((Map<String, dynamic> p) {
-            return Person.fromJson(p);
-          }).toList());
-          return Text('personne2 : $persons');
-        } else if (snapshot.hasError) {
-          return Text('${snapshot.error}');
-        }
-        return const CircularProgressIndicator();
-      },
+    return const MaterialApp(
+      title: _title,
+      home: MyStatefulWidget(),
     );
   }
-}*/
+}
+
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({Key? key}) : super(key: key);
+
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  final Future<String> _myNetworkData = Future<String>.delayed(
+    const Duration(seconds: 4),
+    () => 'This is what you have been waiting for',
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Async With FutureBuilder'),
+      ),
+      body: Center(
+        child: FutureBuilder<String>(
+          future: _myNetworkData,
+          builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+            List<Widget> children;
+            if (snapshot.connectionState == ConnectionState.done && snapshot.hasData) {
+              children = <Widget>[
+                const Icon(
+                  Icons.thumb_up,
+                  color: Colors.purple,
+                  size: 100,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: Text(
+                    'Done: ${snapshot.data}',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                )
+              ];
+            } else if (snapshot.connectionState == ConnectionState.done && snapshot.hasError) {
+              children = <Widget>[
+                const Icon(
+                  Icons.error,
+                  color: Colors.red,
+                  size: 100,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: Text(
+                    'Error: ${snapshot.error}',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                )
+              ];
+            } else {
+              children = const <Widget>[
+                SizedBox(
+                  child: CircularProgressIndicator(
+                    color: Colors.blue,
+                  ),
+                  width: 80,
+                  height: 80,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 30),
+                  child: Text(
+                    'Retrieving Data',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                )
+              ];
+            }
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: children,
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
