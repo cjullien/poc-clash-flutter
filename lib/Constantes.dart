@@ -1,5 +1,5 @@
 class App {
-  static const String title = 'My App title';
+  static const String title = 'Adresse Book';
 }
 
 class Url {
