@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
                                   color: Colors.white,
                                   child: Row(
                                     children: [
-                                      Center(
+                                      /*Center(
                                         child: Padding(
                                           padding: EdgeInsets.all(10),
                                           child: Expanded(
@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
                                             flex: 2,
                                           ),
                                         ),
-                                      ),
+                                      ),*/
                                       Expanded(
                                         child: Container(
                                           alignment: Alignment.topLeft,
