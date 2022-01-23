@@ -53,7 +53,6 @@ class _MyAppState extends State<MyApp> {
                     future: futureDynamic,
                     builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
                       return ListView(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0),
                         children: persons
                             .map(
                               (p) => Text.rich(
