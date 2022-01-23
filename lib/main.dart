@@ -78,8 +78,8 @@ class _MyAppState extends State<MyApp> {
                                               Expanded(
                                                 flex: 5,
                                                 child: ListTile(
-                                                  title: Text("Shape Of You"),
-                                                  subtitle: Text("Ed Sheeran"),
+                                                  title: Text(p.firstname),
+                                                  subtitle: Text(p.name),
                                                 ),
                                               ),
                                               Expanded(
@@ -88,14 +88,14 @@ class _MyAppState extends State<MyApp> {
                                                   mainAxisAlignment: MainAxisAlignment.end,
                                                   children: [
                                                     TextButton(
-                                                      child: Text("PLAY"),
+                                                      child: Text("Phone"),
                                                       onPressed: () {},
                                                     ),
                                                     SizedBox(
                                                       width: 8,
                                                     ),
                                                     TextButton(
-                                                      child: Text("ADD TO QUEUE"),
+                                                      child: Text("email"),
                                                       onPressed: () {},
                                                     ),
                                                     SizedBox(
