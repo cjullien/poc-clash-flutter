@@ -56,9 +56,14 @@ class _MyAppState extends State<MyApp> {
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         children: persons
                             .map(
-                              (p) => Text(
-                                '$p.firstname - $p.name',
-                                style: TextStyle(fontSize: 30),
+                              (p) => Text.rich(
+                                TextSpan(
+                                  text: ' - ', // default text style
+                                  children: <TextSpan>[
+                                    TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
+                                    TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold)),
+                                  ],
+                                ),
                               ),
                             )
                             .toList(),
