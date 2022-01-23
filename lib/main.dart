@@ -19,8 +19,8 @@ class MyApp extends StatefulWidget {
 
 class TooltipSpan extends WidgetSpan {
   TooltipSpan({
-    @required String message,
-    @required InlineSpan inlineSpan,
+    String message = "",
+    InlineSpan inlineSpan,
   }) : super(
           child: Tooltip(
             message: message,
