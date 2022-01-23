@@ -14,6 +14,6 @@ class Person {
   }
 
   toString() {
-    return "Person { name : $name }";
+    return "Person { firstname: $firstname , name: $name, email: $email }";
   }
 }
