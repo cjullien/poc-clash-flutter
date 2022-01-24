@@ -21,16 +21,15 @@ class _MyAppState extends State<MyApp> {
   final List<Person> persons = [
     Person(name: "test1")
   ];
-
-  _MyAppState() {
-    // getData();
-    super.initState();
-  }
-
-  late Future<dynamic> futureDynamic = Future<dynamic>.delayed(
+  late final Future<dynamic> futureDynamic = Future<dynamic>.delayed(
     const Duration(seconds: 1),
     () => fetchDynamic(),
   );
+
+  _MyAppState() {
+    getData();
+    super.initState();
+  }
 
   void getData() {
     futureDynamic
@@ -48,6 +47,6 @@ class _MyAppState extends State<MyApp> {
             appBar: AppBar(
               title: const Text(_constantes.App.title),
             ),
-            body: Center(child: FutureListPersonBuilderWidget(persons, _MyAppState()))));
+            body: Center(child: FutureListPersonBuilderWidget(persons, futureDynamic))));
   }
 }
