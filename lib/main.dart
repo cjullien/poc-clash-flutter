@@ -109,8 +109,8 @@ class ContactCard extends StatelessWidget {
                     Expanded(
                       flex: 5,
                       child: ListTile(
-                        title: Text(p.firstname),
-                        subtitle: Text(p.name),
+                        title: Text(person.firstname),
+                        subtitle: Text(person.name),
                       ),
                     ),
                     Expanded(
