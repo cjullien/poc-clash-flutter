@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:adress_book/services/PersonService.dart';
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/utils/FuturGeneric.dart';
 import 'package:adress_book/utils/Constantes.dart' as _constantes;
