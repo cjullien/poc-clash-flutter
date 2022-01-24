@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'models/Person.dart';
 import 'utils/FuturGeneric.dart';
-import 'utils/Constantes.dart' as _constantes;
+import 'package:adress_book/utils/Constantes.dart' as _constantes;
 import 'widget/MemoryImageWidget.dart';
 
 void main() => runApp(const MyApp());
