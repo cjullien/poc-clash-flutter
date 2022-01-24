@@ -13,7 +13,7 @@ class Person {
       name: json['name'],
       email: json['email'],
       phone: json['phone'],
-      picture: json['phone'],
+      picture: json[''],
     );
   }
 
