@@ -25,7 +25,7 @@ class FutureListPersonBuilderWidget extends StatefulWidget {
 
   void getData() {
     futureDynamic
-        .then((resultList) => setState(() {
+        .then((resultList) => _state.setState(() {
               persons.add(Person(name: "test2"));
               persons.addAll(List<Person>.from(resultList.map((model) => Person.fromJson(model))));
             }))
