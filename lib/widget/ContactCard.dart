@@ -17,11 +17,8 @@ class ContactCard extends StatelessWidget {
         child: Row(
           children: [
             Center(
-              child: Padding(
-                padding: EdgeInsets.all(10),
-                child: Expanded(flex: 2, child: Text("toto") //MemoryImageWidget(person.picture),
-                    ),
-              ),
+              child: Expanded(flex: 2, child: Text("toto") //MemoryImageWidget(person.picture),
+                  ),
             ),
             Expanded(
               child: Container(
