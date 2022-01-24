@@ -45,7 +45,7 @@ class ContactCard extends StatelessWidget {
                             onPressed: () {},
                           ),
                           TextButton(
-                            child: Text("email"),
+                            child: Text("email2"),
                             onPressed: () {},
                           ),
                           SizedBox(
