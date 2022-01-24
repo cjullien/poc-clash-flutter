@@ -6,15 +6,10 @@ const base64Image = 'R0lGODlhPQBEAPeoAJosM//AwO/AwHVYZ/z595kzAP/s7P+goOXMv8+fhw/
 class MemoryImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Memory Image'),
-      ),
-      body: Container(
-        color: Colors.white,
-        child: Image.memory(
-          base64Decode(base64Image),
-        ),
+    return Container(
+      color: Colors.white,
+      child: Image.memory(
+        base64Decode(base64Image),
       ),
     );
   }
