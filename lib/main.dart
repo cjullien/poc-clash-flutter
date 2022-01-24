@@ -19,7 +19,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final List<Person> persons = [
-    Person(name: "test1")
+    //Person(name: "test1")
   ];
   late final Future<dynamic> futureDynamic = Future<dynamic>.delayed(
     const Duration(seconds: 1),
