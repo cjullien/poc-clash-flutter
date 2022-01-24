@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:adressbook/utils/Constantes.dart' as _constantes;
-import 'package:adressbook/widget:MemoryImageWidget.dart';
-import 'package:adressbook/dto:Person.dart';
-import 'package:adressbook/services:FuturGeneric.dart';
+import 'package:helloworld/utils/Constantes.dart' as _constantes;
+import 'package:helloworld/widget:MemoryImageWidget.dart';
+import 'package:helloworld/dto:Person.dart';
+import 'package:helloworld/services:FuturGeneric.dart';
 
 void main() => runApp(const MyApp());
 
