@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/widget/TextButtonConditional.dart';
+import 'package:adress_book/widget/MemoryImageWidget.dart';
 
 class ContactCard extends StatelessWidget {
   final Person person;
@@ -15,15 +16,15 @@ class ContactCard extends StatelessWidget {
         color: Colors.white,
         child: Row(
           children: [
-            /*Center(
-            child: Padding(
-              padding: EdgeInsets.all(10),
-              child: Expanded(
-                child: MemoryImageWidget(),
-                flex: 2,
+            Center(
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: Expanded(
+                  child: MemoryImageWidget(),
+                  flex: 2,
+                ),
               ),
             ),
-          ),*/
             Expanded(
               child: Container(
                 alignment: Alignment.topLeft,
