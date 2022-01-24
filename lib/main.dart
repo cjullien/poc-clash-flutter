@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'Person.dart';
+import 'models/Person.dart';
 import 'FuturGeneric.dart';
 import 'Constantes.dart' as _constantes;
 import 'widget/MemoryImageWidget.dart';
