@@ -9,10 +9,13 @@ part 'user.g.dart';
 /// JSON serialization logic to be generated.
 @JsonSerializable()
 class User {
-  User(this.name, this.email);
+  User(this.firstname, this.name, this.email, this.phone, this.picture);
 
-  String name;
-  String email;
+  final String firstname;
+  final String name;
+  final String email;
+  final String phone;
+  final String picture;
 
   /// A necessary factory constructor for creating a new User instance
   /// from a map. Pass the map to the generated `_$UserFromJson()` constructor.
