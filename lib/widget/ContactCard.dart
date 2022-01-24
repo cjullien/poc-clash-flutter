@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/Person.dart';
+import 'package:adress_book/models/Person.dart';
 
 class ContactCard extends StatelessWidget {
   final Person person;
