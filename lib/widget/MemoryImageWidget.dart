@@ -13,8 +13,8 @@ class MemoryImageWidget extends StatelessWidget {
       body: Container(
         color: Colors.white,
         child: Image.memory(
-            //base64Decode(base64Image),
-            ),
+          base64Decode("base64Image"),
+        ),
       ),
     );
   }
