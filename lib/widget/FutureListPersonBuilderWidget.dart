@@ -9,15 +9,16 @@ import 'package:adress_book/main.dart';
 
 class FutureListPersonBuilderWidget extends StatefulWidget {
   final List<Person> persons;
+  final State _state;
 
   late Future<dynamic> futureDynamic = Future<dynamic>.delayed(
     const Duration(seconds: 1),
     () => fetchDynamic(),
   );
 
-  State createState() {}
+  State createState() => _state;
 
-  FutureListPersonBuilderWidget(this.persons) {
+  FutureListPersonBuilderWidget(this.persons, this._state) {
     futureDynamic = fetchDynamic();
     getData();
   }
