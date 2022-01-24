@@ -40,15 +40,8 @@ class ContactCard extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          TextButtonConditional(true),
-                          TextButton(
-                            child: Text("Phone"),
-                            onPressed: () {},
-                          ),
-                          TextButton(
-                            child: Text("email"),
-                            onPressed: () {},
-                          ),
+                          TextButtonConditional(person.phone),
+                          TextButtonConditional(person.email),
                         ],
                       ),
                     )
@@ -67,16 +60,18 @@ class ContactCard extends StatelessWidget {
 }
 
 class TextButtonConditional extends StatelessWidget {
-  final bool condition;
+  final String value;
 
-  TextButtonConditional(this.condition) {}
+  TextButtonConditional(this.value) {}
 
   Widget build(BuildContext context) {
-    return Text((() {
-      if (condition) {
-        return "tis true";
+      if (value.isNotEmpty) {
+        return TextButton(
+          child: Text("Phone"),
+          onPressed: () {},
+        );
       }
-      return "anything but true";
-    })());
+      return Text("-");
+    }
   }
 }
