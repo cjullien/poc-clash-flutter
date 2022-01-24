@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:http/http.dart' as http
+import 'package:http/http.dart' as http;
 import 'package:adress_book/utils/Constantes.dart' as _constantes;
 
 Future<dynamic> fetchDynamic() async {
