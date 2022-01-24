@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'models/Person.dart';
 import 'utils/FuturGeneric.dart';
 import 'package:adress_book/utils/Constantes.dart' as _constantes;
-import 'widget/MemoryImageWidget.dart';
+//import 'widget/MemoryImageWidget.dart';
 
 void main() => runApp(const MyApp());
 
@@ -18,7 +18,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late Future<dynamic> futureDynamic = Future<dynamic>.delayed(
-    const Duration(seconds: 4),
+    const Duration(seconds: 1),
     () => fetchDynamic(),
   );
   final List<Person> persons = [];
