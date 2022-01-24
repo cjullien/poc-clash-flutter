@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'models/Person.dart';
-import 'FuturGeneric.dart';
-import 'Constantes.dart' as _constantes;
+import 'utils/FuturGeneric.dart';
+import 'utils/Constantes.dart' as _constantes;
 import 'widget/MemoryImageWidget.dart';
 
 void main() => runApp(const MyApp());
