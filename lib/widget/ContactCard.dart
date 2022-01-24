@@ -69,7 +69,7 @@ class ContactCard extends StatelessWidget {
 class TextButtonConditional extends StatelessWidget {
   final bool condition;
 
-  TextButtonCustom(condition) {}
+  TextButtonConditional(this.condition) {}
 
   Widget build(BuildContext context) {
     return Text((() {
