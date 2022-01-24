@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:adress_book/models/Person.dart';
+import 'package:adress_book/widget/TextButtonConditional.dart';
 
 class ContactCard extends StatelessWidget {
   final Person person;
@@ -56,22 +57,5 @@ class ContactCard extends StatelessWidget {
       elevation: 8,
       margin: EdgeInsets.all(10),
     );
-  }
-}
-
-class TextButtonConditional extends StatelessWidget {
-  final String value;
-  final String text;
-
-  TextButtonConditional(this.value, this.text) {}
-
-  Widget build(BuildContext context) {
-    if (value.isNotEmpty) {
-      return TextButton(
-        child: Text(text),
-        onPressed: () {},
-      );
-    }
-    return Text("-");
   }
 }
