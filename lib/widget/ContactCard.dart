@@ -16,20 +16,20 @@ class ContactCard extends StatelessWidget {
         color: Colors.white,
         child: Row(
           children: [
+            Center(
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: Expanded(
+                  child: MemoryImageWidget(person.picture),
+                  flex: 2,
+                ),
+              ),
+            ),
             Expanded(
               child: Container(
                 alignment: Alignment.topLeft,
                 child: Column(
                   children: [
-                    Center(
-                      child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Expanded(
-                          child: MemoryImageWidget(person.picture),
-                          flex: 2,
-                        ),
-                      ),
-                    ),
                     Expanded(
                       flex: 5,
                       child: ListTile(
