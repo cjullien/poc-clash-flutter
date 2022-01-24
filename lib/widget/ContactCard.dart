@@ -65,13 +65,12 @@ class TextButtonConditional extends StatelessWidget {
   TextButtonConditional(this.value) {}
 
   Widget build(BuildContext context) {
-      if (value.isNotEmpty) {
-        return TextButton(
-          child: Text("Phone"),
-          onPressed: () {},
-        );
-      }
-      return Text("-");
+    if (value.isNotEmpty) {
+      return TextButton(
+        child: Text("Phone"),
+        onPressed: () {},
+      );
     }
+    return Text("-");
   }
 }
