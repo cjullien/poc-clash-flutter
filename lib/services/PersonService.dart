@@ -12,9 +12,7 @@ class PersonService {
   PersonService() {}
 
   List<Person> getData() {
-    final List<Person> persons = [
-      Person(name: "test1")
-    ];
+    final List<Person> persons = [];
 
     futureDynamic
         .then((resultList) => () {

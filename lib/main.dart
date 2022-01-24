@@ -25,19 +25,23 @@ class _MyAppState extends State<MyApp> {
 
   _MyAppState() {
     persons.addAll(PersonService().getData());
+    getData();
     super.initState();
   }
 
-  /*void getData() {
+  late Future<dynamic> futureDynamic = Future<dynamic>.delayed(
+    const Duration(seconds: 1),
+    () => fetchDynamic(),
+  );
+
+  void getData() {
     futureDynamic
         .then((resultList) => setState(() {
               persons.add(Person(name: "test2"));
               persons.addAll(List<Person>.from(resultList.map((model) => Person.fromJson(model))));
             }))
-        .catchError((error) {
-      errorMsg = error.toString();
-    });
-  }*/
+        .catchError((error) {});
+  }
 
   @override
   Widget build(BuildContext context) {
