@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-import 'Constantes.dart' as _constantes;
+import 'package:adressbook/utils/Constantes.dart' as _constantes;
 
 Future<dynamic> fetchDynamic() async {
   final response = await http.get(Uri.parse(_constantes.Url.url1));
@@ -10,6 +10,6 @@ Future<dynamic> fetchDynamic() async {
   if (response.statusCode == 200) {
     return jsonDecode(response.body);
   } else {
-    throw Exception('Failed to load Person');
+    throw Exception('Failed to load dynamic');
   }
 }
