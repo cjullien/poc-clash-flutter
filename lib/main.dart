@@ -36,7 +36,9 @@ class _MyAppState extends State<MyApp> {
         .then((resultList) => setState(() {
               persons.addAll(List<Person>.from(resultList.map((model) => Person.fromJson(model))));
             }))
-        .catchError((error) {});
+        .catchError((error) {
+      print(error);
+    });
   }
 
   @override
