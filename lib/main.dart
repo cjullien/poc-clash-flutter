@@ -21,9 +21,7 @@ class _MyAppState extends State<MyApp> {
     const Duration(seconds: 1),
     () => fetchDynamic(),
   );
-  final List<Person> persons = [
-    Person(name: "test1")
-  ];
+  final List<Person> persons = [];
   String errorMsg = "";
 
   _MyAppState() {
@@ -34,7 +32,6 @@ class _MyAppState extends State<MyApp> {
   void getData() {
     futureDynamic
         .then((resultList) => setState(() {
-              persons.add(Person(name: "test2"));
               persons.addAll(List<Person>.from(resultList.map((model) => Person.fromJson(model))));
             }))
         .catchError((error) {
