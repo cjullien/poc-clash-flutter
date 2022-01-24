@@ -16,13 +16,11 @@ class ContactCard extends StatelessWidget {
         color: Colors.white,
         child: Row(
           children: [
-            Expanded(
+            Center(
               child: Padding(
                 padding: EdgeInsets.all(10),
-                child: Expanded(
-                  flex: 2,
-                  child: MemoryImageWidget(person.picture),
-                ),
+                child: Expanded(flex: 2, child: Text("toto") //MemoryImageWidget(person.picture),
+                    ),
               ),
             ),
             Expanded(
