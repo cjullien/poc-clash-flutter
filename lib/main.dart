@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
 
   _MyAppState() {
     persons.addAll(PersonService().getData());
-    getData();
+    // getData();
     super.initState();
   }
 
