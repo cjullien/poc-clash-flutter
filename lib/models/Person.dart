@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'person.g.dart';
+//part 'person.g.dart';
 
 @JsonSerializable()
 class Person {
@@ -10,7 +10,7 @@ class Person {
   final String name;
   final String email;
   final String phone;
-  final String picture;
+  final String? picture;
 
   factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
 
