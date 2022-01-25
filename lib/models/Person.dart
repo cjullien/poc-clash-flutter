@@ -26,7 +26,7 @@ class Person {
   }*/
 }
 
-T _dataFromJson<T>(Map<String, dynamic> input) => input['value'] as T;
+T _dataFromJson<T>(Map<String, dynamic> input) => input as T;
 
 Map<String, dynamic> _dataToJson<T>(T input) => {
       'value': input
