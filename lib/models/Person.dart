@@ -14,7 +14,7 @@ class Person {
   factory Person.fromJson(Map<String, dynamic> json) {
     String pictureOrEmpty = "";
     try {
-      pictureOrEmpty = json['picture'];
+      pictureOrEmpty = ""; //json['picture'];
     } catch (error) {
       pictureOrEmpty = "";
     }
