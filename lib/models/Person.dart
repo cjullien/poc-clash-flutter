@@ -9,6 +9,8 @@ class Person {
   final String phone;
   final String picture;
 
+  Map<String, dynamic> toJson() => _$PersonToJson(this);
+
   factory Person.fromJson(Map<String, dynamic> json) => Person(
         firstname: json['firstname'] as String,
         name: json['name'] as String,
@@ -17,7 +19,7 @@ class Person {
         picture: json['picture'] as String,
       );
 
-  Map<String, dynamic> toJson() => <String, dynamic>{
+  Map<String, dynamic> _$PersonToJson(Person instance) => <String, dynamic>{
         'firstname': instance.firstname,
         'name': instance.name,
         'email': instance.email,
