@@ -22,9 +22,11 @@ class ContactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shadowColor: Colors.blue,
+      shape: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: BorderSide(color: Colors.white)),
+      width: 500,
       child: Container(
         height: 100,
-        width: 500,
         color: Colors.white,
         child: Row(
           children: [
