@@ -18,7 +18,7 @@ class Person {
         name: json['name'] as String,
         email: json['email'] as String,
         phone: json['phone'] as String,
-        picture: json['picture']?.isNotmpty ?? json['picture'] as String,
+        picture: json['phone']?.isNotmpty ?? json['picture'] as String,
       );
 
   Map<String, dynamic> _$PersonToJson(Person instance) => <String, dynamic>{
