@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'Person.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class Person {
   Person(this.firstname, this.name, this.email, this.phone, this.picture);
 
