@@ -1,5 +1,3 @@
-import 'package:json_annotation/json_annotation.dart';
-
 class Person {
   Person({this.firstname = "", this.name = "", this.email = "", this.phone = "", this.picture = ""});
 
