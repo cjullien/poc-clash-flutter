@@ -1,8 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'Person.g.dart';
-
-@JsonSerializable(explicitToJson: true)
 class Person {
   Person(this.firstname, this.name, this.email, this.phone, this.picture);
 
@@ -16,7 +13,19 @@ class Person {
 
   Map<String, dynamic> toJson() => _$PersonToJson(this);
 
-  /*toString() {
-    return "Person { firstname: $firstname , name: $name, email: $email }";
-  }*/
+  Person _$PersonFromJson(Map<String, dynamic> json) => Person(
+        firstname: json['firstname'] as String,
+        name: json['name'] as String,
+        email: json['email'] as String,
+        phone: json['phone'] as String,
+        picture: json['picture'] == null ? null : picture as String,
+      );
+
+  Map<String, dynamic> _$PersonToJson(Person instance) => <String, dynamic>{
+        'firstname': instance.firstname,
+        'name': instance.name,
+        'email': instance.email,
+        'phone': instance.phone,
+        'picture': instance.picture,
+      };
 }
