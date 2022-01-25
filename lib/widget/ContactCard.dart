@@ -10,6 +10,15 @@ class ContactCard extends StatelessWidget {
 
   ContactCard(this.person) {}
 
+  _launchPhoneURL(String phoneNumber) async {
+    String url = 'tel:' + phoneNumber;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -44,7 +53,7 @@ class ContactCard extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          TextButtonConditional(person.phone, "Phone", () => launch("tel://${person.phone}")),
+                          TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
                           TextButtonConditional(person.email, "email", () => {}),
                         ],
                       ),
