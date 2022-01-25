@@ -8,13 +8,9 @@ class Person {
 
   @JsonKey(fromJson: _dataFromJson, toJson: _dataToJson)
   final String firstname;
-  @JsonKey(fromJson: _dataFromJson, toJson: _dataToJson)
   final String name;
-  @JsonKey(fromJson: _dataFromJson, toJson: _dataToJson)
   final String email;
-  @JsonKey(fromJson: _dataFromJson, toJson: _dataToJson)
   final String phone;
-  @JsonKey(fromJson: _dataFromJson, toJson: _dataToJson)
   final String picture;
 
   factory Person.fromJson(Map<String, dynamic> json) => _dataFromJson(json);
