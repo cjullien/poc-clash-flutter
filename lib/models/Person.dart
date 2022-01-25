@@ -10,7 +10,7 @@ class Person {
   final String name;
   final String email;
   final String phone;
-  final String? picture;
+  final String picture;
 
   factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
 
