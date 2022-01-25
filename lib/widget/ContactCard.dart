@@ -42,8 +42,23 @@ class ContactCard extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          TextButtonConditional(person.phone, "Phone"),
-                          TextButtonConditional(person.email, "email"),
+                          TextButtonConditional(person.phone, "Phone", () => {launch("tel://21213123123"}),
+                          TextButtonConditional(person.email, "email", () => {
+if (Platform.isAndroid) {
+  AndroidIntent intent = AndroidIntent(
+    action: 'android.intent.action.MAIN',
+    category: 'android.intent.category.APP_EMAIL',
+  );
+  intent.launch().catchError((e) {
+    ;
+  });
+} else if (Platform.isIOS) {
+  launch("message://").catchError((e){
+    ;
+  });
+}
+
+                          }),
                         ],
                       ),
                     )
