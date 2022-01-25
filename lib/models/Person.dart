@@ -11,8 +11,10 @@ class Person {
 
   Map<String, dynamic> toJson() => _$PersonToJson(this);
 
+  String getJsonElement(element) => element == null ? "" : element;
+
   factory Person.fromJson(Map<String, dynamic> json) => Person(
-        firstname: json['firstname'] as String,
+        firstname: getJsonElement(json['name']),
         name: json['name'] as String,
         email: json['email'] as String,
         phone: json['phone'] as String,
