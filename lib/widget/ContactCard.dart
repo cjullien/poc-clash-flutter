@@ -28,10 +28,10 @@ class ContactCard extends StatelessWidget {
         borderSide: BorderSide(color: Colors.white),
       ),
       elevation: 8,
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.symmetric(horizontal: 1),
       child: Container(
         height: 100,
-        width: 40.0,
+        //width: 400,
         color: Colors.white,
         child: Row(
           children: [
