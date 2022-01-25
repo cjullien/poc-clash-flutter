@@ -15,7 +15,7 @@ class Person {
   @JsonKey(fromJson: _dataFromJson, toJson: _dataToJson)
   final String phone;
   @JsonKey(fromJson: _dataFromJson, toJson: _dataToJson)
-  final String picture = "";
+  final String picture;
 
   factory Person.fromJson(Map<String, dynamic> json) => _dataFromJson(json);
 
