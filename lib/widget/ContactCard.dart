@@ -23,7 +23,7 @@ class ContactCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shadowColor: Colors.black,
-      shape: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: BorderSide(color: Colors.white)),
+      shape: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: BorderSide(color: Colors.white)),
       child: Container(
         height: 100,
         width: 500,
