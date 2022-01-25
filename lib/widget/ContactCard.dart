@@ -31,7 +31,7 @@ class ContactCard extends StatelessWidget {
       margin: EdgeInsets.all(10),
       child: Container(
         height: 100,
-        width: 50,
+        width: 400,
         color: Colors.white,
         child: Row(
           children: [
