@@ -14,7 +14,7 @@ description: Poc d'illustration clash code vs low-code
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.13.4 <3.0.0"
+  sdk: ">=2.14.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -67,23 +67,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-targets:
-  $default:
-    builders:
-      json_serializable:
-        options:
-          # Options configure how source code is generated for every
-          # `@JsonSerializable`-annotated class in the package.
-          #
-          # The default value for each is listed.
-          any_map: false
-          checked: false
-          constructor: ""
-          create_factory: true
-          create_to_json: true
-          disallow_unrecognized_keys: false
-          explicit_to_json: false
-          field_rename: none
-          generic_argument_factories: false
-          ignore_unannotated: false
-          include_if_null: true
