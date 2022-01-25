@@ -11,21 +11,13 @@ class Person {
 
   String getJsonElement(element) => element == null ? "" : element;
 
-  factory Person.fromJson(Map<String, dynamic> json) {
-    String pictureOrEmpty = "";
-    try {
-      pictureOrEmpty = ""; //json['picture'];
-    } catch (error) {
-      pictureOrEmpty = "";
-    }
-    return Person(
-      firstname: json['username'] as String,
-      name: json['name'] as String,
-      email: json['email'] as String,
-      phone: json['phone'] as String,
-      picture: pictureOrEmpty,
-    );
-  }
+  factory Person.fromJson(Map<String, dynamic> json) => Person(
+        firstname: json['username'] as String,
+        name: json['name'],
+        email: json['email'],
+        phone: json['phone'],
+        picture: json.containsKey('picture') ? json['picture'] : "",
+      );
 
   Map<String, dynamic> _$PersonToJson(Person instance) => <String, dynamic>{
         'firstname': instance.firstname,
