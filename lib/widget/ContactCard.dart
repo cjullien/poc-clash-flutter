@@ -42,7 +42,7 @@ class ContactCard extends StatelessWidget {
                   children: [
                     Expanded(
                       child: MemoryImageWidget(person.picture),
-                      flex: 2,
+                      flex: 5,
                     ),
                     Expanded(
                       flex: 5,
