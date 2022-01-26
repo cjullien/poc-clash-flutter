@@ -31,13 +31,13 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
         future: futureDynamic,
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           return StaggeredGrid.count(
-            crossAxisCount: (MediaQuery.of(context).size.width ~/ 200),
+            crossAxisCount: (MediaQuery.of(context).size.width ~/ 300),
             mainAxisSpacing: 4,
             crossAxisSpacing: 4,
             children: persons
                 .map(
                   (p) => StaggeredGridTile.count(
-                    crossAxisCellCount: (MediaQuery.of(context).size.width ~/ 200.0),
+                    crossAxisCellCount: (MediaQuery.of(context).size.width ~/ 150.0),
                     mainAxisCellCount: 2, //MediaQuery.of(context).size.height as int,
                     child: ContactCard(p),
                   ),
