@@ -41,23 +41,12 @@ class ContactCard extends StatelessWidget {
                 child: Column(
                   children: [
                     MemoryImageWidget(person.picture),
-                    Expanded(
-                      flex: 5,
-                      child: ListTile(
-                        title: Text(person.firstname),
-                        subtitle: Text(person.name),
-                      ),
+                    ListTile(
+                      title: Text(person.firstname),
+                      subtitle: Text(person.name),
                     ),
-                    Expanded(
-                      flex: 5,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
-                          TextButtonConditional(person.email, "email", () => {}),
-                        ],
-                      ),
-                    )
+                    TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
+                    TextButtonConditional(person.email, "email", () => {}),
                   ],
                 ),
               ),
