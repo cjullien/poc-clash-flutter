@@ -17,17 +17,19 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
     return FutureBuilder<dynamic>(
       future: futureDynamic,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-        return BootstrapContainer(
-          fluid: true,
-          paddin
-          children: persons
-              .map(
-                (p) => BootstrapCol(
-                  sizes: 'col-xs-12 col-sm-6 col-lg-4 col-xl-3',
-                  child: ContactCard(p),
-                ),
-              )
-              .toList(),
+        return Scrollbar(
+          isAlwaysShown: true,
+          child: BootstrapContainer(
+            fluid: true,
+            children: persons
+                .map(
+                  (p) => BootstrapCol(
+                    sizes: 'col-xs-12 col-sm-6 col-lg-4 col-xl-3',
+                    child: ContactCard(p),
+                  ),
+                )
+                .toList(),
+          ),
         );
       },
     );
