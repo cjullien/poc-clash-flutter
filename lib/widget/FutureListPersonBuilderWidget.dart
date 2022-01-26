@@ -37,7 +37,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
                   xs: 12,
                   md: 6,
                   lg: 3,
-                  child: Container(child: Text("toto")),
+                  child: Text("toto"), //ContactCard(p),
                 ),
               )
               .toList(),
