@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/widget/ContactCard.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class FutureListPersonBuilderWidget extends StatelessWidget {
   final List<Person> persons;

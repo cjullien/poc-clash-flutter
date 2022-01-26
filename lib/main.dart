@@ -6,7 +6,6 @@ import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/utils/FuturGeneric.dart';
 import 'package:adress_book/utils/Constantes.dart' as _constantes;
 import 'widget/FutureListPersonBuilderWidget.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 //import 'widget/MemoryImageWidget.dart';
 
 void main() => runApp(const MyApp());
@@ -51,39 +50,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text(_constantes.App.title),
         ),
         body: Center(
-          child: //FutureListPersonBuilderWidget(persons, futureDynamic),
-              StaggeredGrid.count(
-            crossAxisCount: 4,
-            mainAxisSpacing: 4,
-            crossAxisSpacing: 4,
-            children: const [
-              StaggeredGridTile.count(
-                crossAxisCellCount: 2,
-                mainAxisCellCount: 2,
-                child: Text("A"),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 2,
-                mainAxisCellCount: 1,
-                child: Text("B"),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Text("C"),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Text("D"),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 4,
-                mainAxisCellCount: 2,
-                child: Text("E"),
-              ),
-            ],
-          ),
+          child: FutureListPersonBuilderWidget(persons, futureDynamic),
         ),
       ),
     );
