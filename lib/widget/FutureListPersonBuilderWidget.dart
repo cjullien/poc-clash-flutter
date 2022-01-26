@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/widget/ContactCard.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:responsive_grid/responsive_grid.dart';
 
 class FutureListPersonBuilderWidget extends StatelessWidget {
   final List<Person> persons;
@@ -30,15 +30,13 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
     return FutureBuilder<dynamic>(
         future: futureDynamic,
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-          return StaggeredGrid.extent(
-            mainAxisSpacing: 4,
-            crossAxisSpacing: 4,
-            maxCrossAxisExtent: 10,
+          return ResponsiveGridRow(
             children: persons
                 .map(
-                  (p) => StaggeredGridTile.count(
-                    crossAxisCellCount: 2, //(MediaQuery.of(context).size.width ~/ 300),
-                    mainAxisCellCount: 1, //MediaQuery.of(context).size.height as int,
+                  (p) => ResponsiveGridCol(
+                    xs: 12,
+                    md: 6,
+                    lg: 3,
                     child: ContactCard(p),
                   ),
                 )
