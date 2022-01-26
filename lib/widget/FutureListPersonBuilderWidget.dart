@@ -13,28 +13,35 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
 
   FutureListPersonBuilderWidget(this.persons, this.futureDynamic) {}
 
+  /*     StaggeredGrid.count(
+            crossAxisCount: 4,
+            mainAxisSpacing: 4,
+            crossAxisSpacing: 4,
+            children: const [
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 2,
+                child: Text("A"),
+              ),
+            ],
+          ),*/
+
   Widget build(BuildContext context) {
     return FutureBuilder<dynamic>(
         future: futureDynamic,
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-          return ListView(
+          return StaggeredGrid.count(
+            crossAxisCount: 4,
+            mainAxisSpacing: 4,
+            crossAxisSpacing: 4,
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             children: persons
                 .map(
-                  (p) => ContactCard(p),
-
-                  /* Text.rich(
-                                TextSpan(
-                                  text: ' - ', // default text style
-                                  children: <InlineSpan>[
-                                    TextSpan(text: '${p.firstname} ', style: TextStyle(fontStyle: FontStyle.italic)),
-                                    TextSpan(text: '${p.name}', style: TextStyle(fontWeight: FontWeight.bold)),
-                                    WidgetSpan(
-                                      child: Icon(Icons.email_outlined),
-                                    ),
-                                  ],
-                                ),
-                              ),*/
+                  (p) => StaggeredGridTile.count(
+                    crossAxisCellCount: 2,
+                    mainAxisCellCount: 2,
+                    child: ContactCard(p),
+                  ),
                 )
                 .toList(),
           );
