@@ -21,54 +21,6 @@ class ContactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shadowColor: Colors.black,
-      shape: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(20),
-        borderSide: BorderSide(color: Colors.white),
-      ),
-      elevation: 8,
-      margin: EdgeInsets.all(10),
-      child: Container(
-        //height: 100,
-        //width: 400,
-        color: Colors.white,
-        child: Row(
-          children: [
-            Expanded(
-              child: Container(
-                alignment: Alignment.topLeft,
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: MemoryImageWidget(person.picture),
-                      flex: 5,
-                    ),
-                    Expanded(
-                      flex: 5,
-                      child: ListTile(
-                        title: Text(person.firstname),
-                        subtitle: Text(person.name),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 5,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
-                          TextButtonConditional(person.email, "email", () => {}),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              flex: 8,
-            ),
-          ],
-        ),
-      ),
-    );
+    return Text(person.name);
   }
 }
