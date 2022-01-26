@@ -35,8 +35,8 @@ class ContactCard extends StatelessWidget {
         color: Colors.white,
         child: Row(
           children: [
-            Expanded(
-              child: Container(
+            Center(
+              child: Padding(
                 padding: EdgeInsets.all(10),
                 child: Expanded(
                   child: MemoryImageWidget(person.picture),
