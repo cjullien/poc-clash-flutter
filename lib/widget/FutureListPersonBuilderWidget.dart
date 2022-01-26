@@ -19,10 +19,11 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         return BootstrapContainer(
           fluid: true,
+          paddin
           children: persons
               .map(
                 (p) => BootstrapCol(
-                  sizes: 'col-12 col-xs-12 col-sm-6 col-lg-4 col-xl-4',
+                  sizes: 'col-xs-12 col-sm-6 col-lg-4 col-xl-3',
                   child: ContactCard(p),
                 ),
               )
