@@ -28,22 +28,23 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return FutureBuilder<dynamic>(
-        future: futureDynamic,
-        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-          return ResponsiveGridRow(
-            children: [
-              persons
-                  .map(
-                    (p) => ResponsiveGridCol(
-                      xs: 12,
-                      md: 6,
-                      lg: 3,
-                      child: ContactCard(p),
-                    ),
-                  )
-                  .toList()
-            ],
-          );
-        });
+      future: futureDynamic,
+      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+        return ResponsiveGridRow(
+          children: [
+            persons
+                .map(
+                  (p) => ResponsiveGridCol(
+                    xs: 12,
+                    md: 6,
+                    lg: 3,
+                    child: ContactCard(p),
+                  ),
+                )
+                .toList()
+          ],
+        );
+      },
+    );
   }
 }
