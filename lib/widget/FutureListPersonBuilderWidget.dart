@@ -21,8 +21,8 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
           fluid: true,
           children: persons
               .map(
-                (p) => BootstrapRow(
-                  sizes: 'col-12 col-xs-12 col-sm-6 col-lg-4 col-xl-2',
+                (p) => BootstrapCol(
+                  sizes: 'col-12 col-xs-12 col-sm-6 col-lg-4 col-xl-4',
                   child: ContactCard(p),
                 ),
               )
