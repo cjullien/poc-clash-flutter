@@ -20,7 +20,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
         return ResponsiveGridList(
           children: persons
               .map(
-                (p) => ResponsiveGridCol(
+                (p) => _ResponsiveGridListItem(
                   xs: 12,
                   md: 6,
                   lg: 3,
