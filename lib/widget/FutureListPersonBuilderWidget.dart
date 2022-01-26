@@ -18,6 +18,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
       future: futureDynamic,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         return BootstrapContainer(
+          fluid: true,
           children: persons
               .map(
                 (p) => BootstrapCol(
