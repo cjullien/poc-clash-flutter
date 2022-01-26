@@ -34,14 +34,10 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
           children: persons
               .map(
                 (p) => ResponsiveGridCol(
-                  xs: 6,
-                  md: 3,
-                  child: Container(
-                    height: 100,
-                    alignment: Alignment(0, 0),
-                    color: Colors.blue,
-                    child: Text("xs : 6 \r\nmd : 3"),
-                  ),
+                  xs: 12,
+                  md: 6,
+                  lg: 3,
+                  child: Container(ContactCard(p)),
                 ),
               )
               .toList(),
