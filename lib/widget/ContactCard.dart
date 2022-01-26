@@ -59,7 +59,7 @@ class ContactCard extends StatelessWidget {
                     Expanded(
                       flex: 5,
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
                           TextButtonConditional(person.email, "email", () => {}),
