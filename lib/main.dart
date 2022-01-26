@@ -75,7 +75,7 @@ class _MyAppState extends State<MyApp> {
               StaggeredGridTile.count(
                 crossAxisCellCount: 1,
                 mainAxisCellCount: 1,
-                child: TText(""),
+                child: Text(""),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 4,
