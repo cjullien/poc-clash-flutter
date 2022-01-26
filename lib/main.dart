@@ -6,8 +6,6 @@ import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/utils/FuturGeneric.dart';
 import 'package:adress_book/utils/Constantes.dart' as _constantes;
 import 'widget/FutureListPersonBuilderWidget.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
 //import 'widget/MemoryImageWidget.dart';
 
 void main() => runApp(const MyApp());
@@ -46,27 +44,15 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: _constantes.App.title,
-        home: Scaffold(
-            appBar: AppBar(
-              title: const Text(_constantes.App.title),
-            ),
-            body: Center(
-              child: //FutureListPersonBuilderWidget(persons, futureDynamic),
-GridView.custom(
-  gridDelegate: SliverStairedGridDelegate(
-    crossAxisSpacing: 48,
-    mainAxisSpacing: 24,
-    startCrossAxisDirectionReversed: true,
-    pattern: [
-      StairedGridTile(0.5, 1),
-      StairedGridTile(0.5, 3 / 4),
-      StairedGridTile(1.0, 10 / 4),
-    ],
-  ),
-  childrenDelegate: SliverChildBuilderDelegate(
-    (context, index) => Tile(index: index),
-  ),
-);            )));
+      title: _constantes.App.title,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(_constantes.App.title),
+        ),
+        body: Center(
+          child: FutureListPersonBuilderWidget(persons, futureDynamic),
+        ),
+      ),
+    );
   }
 }
