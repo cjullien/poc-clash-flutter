@@ -21,7 +21,7 @@ dependencies:
     sdk: flutter
   http: 0.13.4
   url_launcher: ^6.0.18
-  responsive_grid: ^2.0.0
+  responsive_grid_list: ^1.2.3
 
 dev_dependencies:
   flutter_test:
