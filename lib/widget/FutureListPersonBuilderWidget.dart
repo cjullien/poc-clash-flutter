@@ -82,7 +82,7 @@ return ResponsiveGridRow(
                 child: Text("xs : 6 \r\nmd : 3"),
               ),
             ),
-        );
+        )]
       },
     );
   }
