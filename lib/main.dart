@@ -60,27 +60,27 @@ class _MyAppState extends State<MyApp> {
               StaggeredGridTile.count(
                 crossAxisCellCount: 2,
                 mainAxisCellCount: 2,
-                child: Tile(index: 0),
+                child: Text(""),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 2,
                 mainAxisCellCount: 1,
-                child: Tile(index: 1),
+                child: Text(""),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 1,
                 mainAxisCellCount: 1,
-                child: Tile(index: 2),
+                child: Text(""),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 1,
                 mainAxisCellCount: 1,
-                child: Tile(index: 3),
+                child: TText(""),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 4,
                 mainAxisCellCount: 2,
-                child: Tile(index: 4),
+                child: Text(""),
               ),
             ],
           ),
