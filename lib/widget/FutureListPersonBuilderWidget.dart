@@ -17,8 +17,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
     return FutureBuilder<dynamic>(
       future: futureDynamic,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-        return Scrollbar(
-          isAlwaysShown: true,
+        return
           child: BootstrapContainer(
             fluid: true,
             children: persons
@@ -29,7 +28,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
                   ),
                 )
                 .toList(),
-          ),
+          
         );
       },
     );
