@@ -38,7 +38,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
                 .map(
                   (p) => StaggeredGridTile.count(
                     crossAxisCellCount: 2,
-                    mainAxisCellCount: (MediaQuery.of(context).size.width ~/ 100), //MediaQuery.of(context).size.height as int,
+                    mainAxisCellCount: (MediaQuery.of(context).size.width ~/ 300), //MediaQuery.of(context).size.height as int,
                     child: ContactCard(p),
                   ),
                 )
