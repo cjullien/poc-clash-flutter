@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/widget/ContactCard.dart';
-import 'package:responsive_grid/responsive_grid.dart';
+import 'package:responsive_grid_list/responsive_grid_list.dart';
 
 class FutureListPersonBuilderWidget extends StatelessWidget {
   final List<Person> persons;
@@ -18,17 +18,10 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
       future: futureDynamic,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         return ResponsiveGridList(
-          children: persons
-              .map(
-                (p) => ResponsiveGridCol(
-                  xs: 12,
-                  md: 6,
-                  lg: 3,
-                  child: ContactCard(p),
-                ),
-              )
-              .toList(),
-        );
+          children: persons.map(
+            (p) => ContactCard(p),
+          ),
+        ).toList();
       },
     );
   }
