@@ -32,7 +32,6 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           return ResponsiveGridRow(
             children: [
-              ContactCard(new Person(name: "name")),
               persons
                   .map(
                     (p) => ResponsiveGridCol(
