@@ -18,6 +18,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
       future: futureDynamic,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         return ResponsiveGridList(
+          desiredItemWidth: 100,
           children: persons
               .map(
                 (p) => _ResponsiveGridListItem(
