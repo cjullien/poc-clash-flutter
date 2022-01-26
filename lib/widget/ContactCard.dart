@@ -21,6 +21,14 @@ class ContactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(person.name);
+    return Card(
+        shadowColor: Colors.black,
+        shape: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          borderSide: BorderSide(color: Colors.white),
+        ),
+        elevation: 8,
+        margin: EdgeInsets.all(10),
+        child: Text(person.name));
   }
 }
