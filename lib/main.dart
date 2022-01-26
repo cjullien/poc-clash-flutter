@@ -49,9 +49,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text(_constantes.App.title),
         ),
-        body: Center(
-          child: FutureListPersonBuilderWidget(persons, futureDynamic),
-        ),
+        body: FutureListPersonBuilderWidget(persons, futureDynamic),
       ),
     );
   }
