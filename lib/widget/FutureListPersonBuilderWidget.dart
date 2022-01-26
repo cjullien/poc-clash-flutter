@@ -32,7 +32,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           return StaggeredGrid.count(
             crossAxisCount: 1,
-            mainAxisSpacing: 1,
+            mainAxisSpacing: 2,
             crossAxisSpacing: 4,
             children: persons
                 .map(
