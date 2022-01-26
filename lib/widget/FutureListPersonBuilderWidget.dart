@@ -30,57 +30,22 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
     return FutureBuilder<dynamic>(
       future: futureDynamic,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-        return ResponsiveGridRow(children: [
-          ResponsiveGridCol(
-            lg: 12,
-            child: Container(
-              height: 100,
-              alignment: Alignment(0, 0),
-              color: Colors.purple,
-              child: Text("lg : 12"),
-            ),
-          ),
-          ResponsiveGridCol(
-            xs: 6,
-            md: 3,
-            child: Container(
-              height: 100,
-              alignment: Alignment(0, 0),
-              color: Colors.green,
-              child: Text("xs : 6 \r\nmd : 3"),
-            ),
-          ),
-          ResponsiveGridCol(
-            xs: 6,
-            md: 3,
-            child: Container(
-              height: 100,
-              alignment: Alignment(0, 0),
-              color: Colors.orange,
-              child: Text("xs : 6 \r\nmd : 3"),
-            ),
-          ),
-          ResponsiveGridCol(
-            xs: 6,
-            md: 3,
-            child: Container(
-              height: 100,
-              alignment: Alignment(0, 0),
-              color: Colors.red,
-              child: Text("xs : 6 \r\nmd : 3"),
-            ),
-          ),
-          ResponsiveGridCol(
-            xs: 6,
-            md: 3,
-            child: Container(
-              height: 100,
-              alignment: Alignment(0, 0),
-              color: Colors.blue,
-              child: Text("xs : 6 \r\nmd : 3"),
-            ),
-          ),
-        ]);
+        return ResponsiveGridRow(
+          children: persons
+              .map(
+                (p) => ResponsiveGridCol(
+                  xs: 6,
+                  md: 3,
+                  child: Container(
+                    height: 100,
+                    alignment: Alignment(0, 0),
+                    color: Colors.blue,
+                    child: Text("xs : 6 \r\nmd : 3"),
+                  ),
+                ),
+              )
+              .toList(),
+        );
       },
     );
   }
