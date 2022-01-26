@@ -34,9 +34,6 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
           children: persons
               .map(
                 (p) => ResponsiveGridCol(
-                  xs: 12,
-                  md: 6,
-                  lg: 3,
                   child: ContactCard(p),
                 ),
               )
