@@ -62,12 +62,7 @@ class ContactCard extends StatelessWidget {
         ),
         // Provide a function that tells the app
         // what to do after an item has been swiped away.
-        onDismissed: (direction) {
-          // Remove the item from the data source.
-          /* setState(() {
-            items.removeAt(index);
-          });*/
-
+        confirmDismiss: (direction) {
           // Then show a snackbar.
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$person dismissed')));
         },
