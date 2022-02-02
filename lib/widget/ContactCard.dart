@@ -62,9 +62,16 @@ class ContactCard extends StatelessWidget {
         ),
         // Provide a function that tells the app
         // what to do after an item has been swiped away.
-        confirmDismiss: (direction) {
-          // Then show a snackbar.
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$person dismissed')));
+        confirmDismiss: (direction) async {
+          if (direction == DismissDirection.startToEnd) {
+            /// edit item
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$person edit')));
+            return false;
+          } else if (direction == DismissDirection.endToStart) {
+            /// delete
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$person dismissed')));
+            return true;
+          }
         },
         // Show a red background as the item is swiped away.
         background: Container(color: Colors.red));
