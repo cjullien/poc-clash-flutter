@@ -5,16 +5,21 @@ import 'package:flutter/material.dart';
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/widget/ContactCard.dart';
 
-class FutureListPersonBuilderWidget extends StatelessWidget {
+class FutureListPersonBuilderWidget extends StatefulWidget {
   final List<Person> persons;
 
   late final Future<dynamic> futureDynamic;
 
   FutureListPersonBuilderWidget(this.persons, this.futureDynamic) {}
 
+  @override
+  _FutureListPersonBuilderWidget createState() => _FutureListPersonBuilderWidget();
+}
+
+class _FutureListPersonBuilderWidget extends State<FutureListPersonBuilderWidget> {
   Widget build(BuildContext context) {
     return FutureBuilder<dynamic>(
-      future: futureDynamic,
+      future: widget.futureDynamic,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           return GridView.count(
@@ -23,7 +28,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
             crossAxisCount: (MediaQuery.of(context).size.width ~/ 300),
-            children: persons
+            children: widget.persons
                 .map((p) => Dismissible(
                       key: UniqueKey(),
                       child: ContactCard(p),
@@ -35,8 +40,11 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
                           // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} edit')));
                           return false;
                         } else if (direction == DismissDirection.endToStart) {
+                          setState(() {
+                            widget.persons.remove(p);
+                          });
+
                           /// delete
-                          persons.remove(p);
                           //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} dismissed')));
                           return true;
                         }
