@@ -6,7 +6,7 @@ import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/utils/FuturGeneric.dart';
 import 'package:adress_book/utils/Constantes.dart' as _constantes;
 import 'widget/FutureListPersonBuilderWidget.dart';
-//import 'widget/MemoryImageWidget.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void main() => runApp(const MyApp());
 
@@ -45,6 +45,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _constantes.App.title,
+      builder: EasyLoading.init(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text(_constantes.App.title),
