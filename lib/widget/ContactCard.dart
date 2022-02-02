@@ -47,7 +47,7 @@ class ContactCard extends StatelessWidget {
           ),
           imageContainer,
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
               const SizedBox(width: 8),
