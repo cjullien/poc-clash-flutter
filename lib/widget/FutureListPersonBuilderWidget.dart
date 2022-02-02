@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/widget/ContactCard.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class FutureListPersonBuilderWidget extends StatelessWidget {
   final List<Person> persons;
@@ -27,7 +26,9 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
             children: persons.map((p) => ContactCard(p)).toList(),
           );
         } else {
-          return EasyLoading.show(status: 'loading...');
+          return CircularProgressIndicator(
+            valueColor: new AlwaysStoppedAnimation<Color>(Colors.blue),
+          );
         }
       },
     );
