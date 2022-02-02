@@ -46,7 +46,7 @@ class ContactCard extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(
-                      flex: 5,
+                      flex: 3,
                       child: ListTile(
                         title: Text(person.firstname),
                         subtitle: Text(person.name),
