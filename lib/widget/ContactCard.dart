@@ -69,7 +69,7 @@ class ContactCard extends StatelessWidget {
           });*/
 
           // Then show a snackbar.
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$item dismissed')));
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$person dismissed')));
         },
         // Show a red background as the item is swiped away.
         background: Container(color: Colors.red));
