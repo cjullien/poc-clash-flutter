@@ -43,13 +43,13 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return CupertinoApp(
       title: _constantes.App.title,
-      home: Scaffold(
-        appBar: AppBar(
+      home: CupertinoPageScaffold(
+        navigationBar: CuppertinoNavigationBar(
           title: const Text(_constantes.App.title),
         ),
-        body: FutureListPersonBuilderWidget(persons, futureDynamic),
+        child: FutureListPersonBuilderWidget(persons, futureDynamic),
       ),
     );
   }
