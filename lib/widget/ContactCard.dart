@@ -46,7 +46,7 @@ class ContactCard extends StatelessWidget {
             title: Text(person.firstname),
             subtitle: Text(person.name),
           ),
-          imageContainer,
+          //imageContainer,
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
