@@ -34,6 +34,7 @@ class ContactCard extends StatelessWidget {
       shadowColor: Colors.black,
       shape: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(color: Colors.lightBlue),
       ),
       elevation: 8,
       child: Container(
