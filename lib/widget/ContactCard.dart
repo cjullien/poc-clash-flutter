@@ -33,49 +33,30 @@ class ContactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Dismissible(
-      key: UniqueKey(),
-      child: Card(
-        shape: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(color: Colors.blueGrey),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListTile(
-              title: Text(person.firstname),
-              subtitle: Text(person.name),
-            ),
-            imageContainer,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
-                const SizedBox(width: 8),
-                TextButtonConditional(person.email, "email", () => _launchMailURL(person.email)),
-                const SizedBox(width: 8),
-              ],
-            ),
-          ],
-        ),
+    return Card(
+      shape: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(20),
+        borderSide: BorderSide(color: Colors.blueGrey),
       ),
-      // Provide a function that tells the app
-      // what to do after an item has been swiped away.
-      confirmDismiss: (direction) async {
-        if (direction == DismissDirection.startToEnd) {
-          /// edit item
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} edit')));
-          return false;
-        } else if (direction == DismissDirection.endToStart) {
-          /// delete
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} dismissed')));
-          return true;
-        }
-      },
-      // Show a red background as the item is swiped away.
-      background: Container(color: Colors.green),
-      secondaryBackground: Container(color: Colors.red),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ListTile(
+            title: Text(person.firstname),
+            subtitle: Text(person.name),
+          ),
+          imageContainer,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
+              const SizedBox(width: 8),
+              TextButtonConditional(person.email, "email", () => _launchMailURL(person.email)),
+              const SizedBox(width: 8),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
