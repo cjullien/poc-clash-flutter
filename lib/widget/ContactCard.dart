@@ -39,7 +39,6 @@ class ContactCard extends StatelessWidget {
       elevation: 8,
       child: Container(
         //width: 400,
-        color: Colors.white,
         child: Row(
           children: [
             Expanded(
