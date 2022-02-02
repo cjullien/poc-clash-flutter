@@ -36,6 +36,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
                           return false;
                         } else if (direction == DismissDirection.endToStart) {
                           /// delete
+                          persons.remove(p);
                           //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} dismissed')));
                           return true;
                         }
