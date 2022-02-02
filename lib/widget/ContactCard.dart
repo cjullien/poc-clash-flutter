@@ -60,13 +60,18 @@ class ContactCard extends StatelessWidget {
             ],
           ),
         ),
-        direction: DismissDirection.up, // or whatever
-        confirmDismiss: (direction) {
-          if (direction == DismissDirection.up) {
-            // or other directions
-            // Swiped up do your thing.
-          }
-          return Future.value(false); // always deny the actual dismiss, else it will expect the widget to be removed
-        });
+        // Provide a function that tells the app
+        // what to do after an item has been swiped away.
+        onDismissed: (direction) {
+          // Remove the item from the data source.
+          /* setState(() {
+            items.removeAt(index);
+          });*/
+
+          // Then show a snackbar.
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$item dismissed')));
+        },
+        // Show a red background as the item is swiped away.
+        background: Container(color: Colors.red));
   }
 }
