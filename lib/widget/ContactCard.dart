@@ -34,14 +34,15 @@ class ContactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shadowColor: Colors.black,
       shape: OutlineInputBorder(
         borderRadius: BorderRadius.circular(20),
         borderSide: BorderSide(color: Colors.blueGrey),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           ListTile(
+            leading: imageContainer,
             title: Text(person.firstname),
             subtitle: Text(person.name),
           ),
