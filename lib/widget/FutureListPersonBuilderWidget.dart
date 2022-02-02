@@ -51,7 +51,7 @@ class _FutureListPersonBuilderWidget extends State<FutureListPersonBuilderWidget
                       },
                       // Show a red background as the item is swiped away.
                       background: Container(color: Colors.green),
-                      secondaryBackground: Container(color: Colors.red),
+                      secondaryBackground: ContactCard(p),
                     ))
                 .toList(),
           );
