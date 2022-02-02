@@ -17,6 +17,8 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
     return FutureBuilder<dynamic>(
       future: futureDynamic,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+        CardController controller; //Use this to trigger swap.
+
         return GridView.count(
           primary: false,
           padding: const EdgeInsets.all(20),
@@ -30,7 +32,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
                     swipeUp: true,
                     swipeDown: true,
                     orientation: AmassOrientation.BOTTOM,
-                    totalNum: welcomeImages.length,
+                    totalNum: persons.length,
                     stackNum: 3,
                     swipeEdge: 4.0,
                     maxWidth: MediaQuery.of(context).size.width * 0.9,
