@@ -11,6 +11,13 @@ class MemoryImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String imageToPrint = image.isNotEmpty ? image : default_base64Image;
-    return MemoryImage(base64Decode(imageToPrint));
+    return Container(
+        height: 200,
+        decoration: BoxDecoration(
+            color: Colors.green,
+            image: Image.memory(
+              base64Decode(imageToPrint),
+              width: 200,
+            )));
   }
 }
