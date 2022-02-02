@@ -23,7 +23,11 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
             crossAxisCount: (MediaQuery.of(context).size.width ~/ 300),
-            children: persons.map((p) => ContactCard(p)).toList(),
+            children: persons
+                .map((p) => {
+                      ContactCard(p)
+                    })
+                .toList(),
           );
         } else {
           return Center(
