@@ -16,14 +16,18 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
     return FutureBuilder<dynamic>(
       future: futureDynamic,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-        return GridView.count(
-          primary: false,
-          padding: const EdgeInsets.all(20),
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          crossAxisCount: (MediaQuery.of(context).size.width ~/ 300),
-          children: persons.map((p) => ContactCard(p)).toList(),
-        );
+        if (snapshot.connectionState == ConnectionState.done) {
+          return GridView.count(
+            primary: false,
+            padding: const EdgeInsets.all(20),
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            crossAxisCount: (MediaQuery.of(context).size.width ~/ 300),
+            children: persons.map((p) => ContactCard(p)).toList(),
+          );
+        } else {
+          return CircularProgressIndicator();
+        }
       },
     );
   }
