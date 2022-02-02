@@ -33,30 +33,40 @@ class ContactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(20),
-        borderSide: BorderSide(color: Colors.blueGrey),
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ListTile(
-            title: Text(person.firstname),
-            subtitle: Text(person.name),
+    return Dismissible(
+        key: UniqueKey(),
+        child: Card(
+          shape: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide(color: Colors.blueGrey),
           ),
-          imageContainer,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
-              const SizedBox(width: 8),
-              TextButtonConditional(person.email, "email", () => _launchMailURL(person.email)),
-              const SizedBox(width: 8),
+              ListTile(
+                title: Text(person.firstname),
+                subtitle: Text(person.name),
+              ),
+              imageContainer,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
+                  const SizedBox(width: 8),
+                  TextButtonConditional(person.email, "email", () => _launchMailURL(person.email)),
+                  const SizedBox(width: 8),
+                ],
+              ),
             ],
           ),
-        ],
-      ),
-    );
+        ),
+        direction: DismissDirection.up, // or whatever
+        confirmDismiss: (direction) {
+          if (direction == DismissDirection.up) {
+            // or other directions
+            // Swiped up do your thing.
+          }
+          return Future.value(false); // always deny the actual dismiss, else it will expect the widget to be removed
+        });
   }
 }
