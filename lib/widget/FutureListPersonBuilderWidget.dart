@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/widget/ContactCard.dart';
+import 'package:flutter_tindercard/flutter_tindercard.dart';
 
 class FutureListPersonBuilderWidget extends StatelessWidget {
   final List<Person> persons;
@@ -22,7 +23,40 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
           crossAxisCount: (MediaQuery.of(context).size.width ~/ 300),
-          children: persons.map((p) => ContactCard(p)).toList(),
+          children: persons
+              .map(
+                (p) => {
+                  new TinderSwapCard(
+                  swipeUp: true,
+                  swipeDown: true,
+                  orientation: AmassOrientation.BOTTOM,
+                  totalNum: welcomeImages.length,
+                  stackNum: 3,
+                  swipeEdge: 4.0,
+                  maxWidth: MediaQuery.of(context).size.width * 0.9,
+                  maxHeight: MediaQuery.of(context).size.width * 0.9,
+                  minWidth: MediaQuery.of(context).size.width * 0.8,
+                  minHeight: MediaQuery.of(context).size.width * 0.8,
+                  cardBuilder: (context, index) => Card(
+                        child: ContactCard(p),
+                      ),
+                  cardController: controller = CardController(),
+                  swipeUpdateCallback:
+                      (DragUpdateDetails details, Alignment align) {
+                    /// Get swiping card's alignment
+                    if (align.x < 0) {
+                      //Card is LEFT swiping
+                    } else if (align.x > 0) {
+                      //Card is RIGHT swiping
+                    }
+                  },
+                  swipeCompleteCallback:
+                      (CardSwipeOrientation orientation, int index) {
+                    /// Get orientation & index of swiped card!
+                  },
+                },
+              )
+              .toList(),
         );
       },
     );
