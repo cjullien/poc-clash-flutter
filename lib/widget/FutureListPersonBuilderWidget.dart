@@ -29,7 +29,8 @@ class _FutureListPersonBuilderWidget extends State<FutureListPersonBuilderWidget
             mainAxisSpacing: 10,
             crossAxisCount: (MediaQuery.of(context).size.width ~/ 300),
             children: widget.persons
-                .map((p) => Dismissible(
+                .map(
+                  (p) => Dismissible(
                     key: UniqueKey(),
                     child: ContactCard(p),
                     // Provide a function that tells the app
@@ -51,7 +52,9 @@ class _FutureListPersonBuilderWidget extends State<FutureListPersonBuilderWidget
                     },
                     // Show a red background as the item is swiped away.
                     background: Container(color: Colors.green),
-                    secondaryBackground: Icon(Icons.delete)))
+                    secondaryBackground: Icon(Icons.delete),
+                  ),
+                )
                 .toList(),
           );
         } else {
