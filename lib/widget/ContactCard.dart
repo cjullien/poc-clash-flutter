@@ -7,7 +7,7 @@ import 'package:adress_book/widget/MemoryImageWidget.dart';
 
 class ContactCard extends StatelessWidget {
   final Person person;
-  Widget imageContainer = null;
+  late Widget imageContainer;
 
   ContactCard(this.person) {
     imageContainer = MemoryImageWidget(person.picture);
