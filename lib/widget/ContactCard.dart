@@ -74,8 +74,8 @@ class ContactCard extends StatelessWidget {
         }
       },
       // Show a red background as the item is swiped away.
-      background: Container(color: Colors.red),
-      secondaryBackground: Container(color: Colors.blue),
+      background: Container(color: Colors.green),
+      secondaryBackground: Container(color: Colors.red),
     );
   }
 }
