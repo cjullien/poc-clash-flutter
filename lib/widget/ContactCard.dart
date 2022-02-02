@@ -38,7 +38,7 @@ class ContactCard extends StatelessWidget {
       ),
       elevation: 8,
       child: Container(
-        Expanded(
+        child: Expanded(
           child: Container(
             alignment: Alignment.topLeft,
             child: Column(
