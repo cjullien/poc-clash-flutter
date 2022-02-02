@@ -32,11 +32,11 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
                       confirmDismiss: (direction) async {
                         if (direction == DismissDirection.startToEnd) {
                           /// edit item
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} edit')));
+                          // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} edit')));
                           return false;
                         } else if (direction == DismissDirection.endToStart) {
                           /// delete
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} dismissed')));
+                          //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} dismissed')));
                           return true;
                         }
                       },
