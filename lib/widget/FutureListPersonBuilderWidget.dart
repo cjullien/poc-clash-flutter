@@ -20,45 +20,44 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
         CardController controller; //Use this to trigger swap.
 
         return GridView.count(
-          primary: false,
-          padding: const EdgeInsets.all(20),
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          crossAxisCount: (MediaQuery.of(context).size.width ~/ 300),
-          children: persons
-              .map(
-                (p) => {
-                  new TinderSwapCard(
-                    swipeUp: true,
-                    swipeDown: true,
-                    orientation: AmassOrientation.BOTTOM,
-                    totalNum: persons.length,
-                    stackNum: 3,
-                    swipeEdge: 4.0,
-                    maxWidth: MediaQuery.of(context).size.width * 0.9,
-                    maxHeight: MediaQuery.of(context).size.width * 0.9,
-                    minWidth: MediaQuery.of(context).size.width * 0.8,
-                    minHeight: MediaQuery.of(context).size.width * 0.8,
-                    cardBuilder: (context, index) => Card(
-                      child: ContactCard(p),
-                    ),
-                    cardController: controller = CardController(),
-                    swipeUpdateCallback: (DragUpdateDetails details, Alignment align) {
-                      /// Get swiping card's alignment
-                      if (align.x < 0) {
-                        //Card is LEFT swiping
-                      } else if (align.x > 0) {
-                        //Card is RIGHT swiping
-                      }
-                    },
-                    swipeCompleteCallback: (CardSwipeOrientation orientation, int index) {
-                      /// Get orientation & index of swiped card!
-                    },
+            primary: false,
+            padding: const EdgeInsets.all(20),
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            crossAxisCount: (MediaQuery.of(context).size.width ~/ 300),
+            children: persons.map(
+              (p) => {
+                new TinderSwapCard(
+                  swipeUp: true,
+                  swipeDown: true,
+                  orientation: AmassOrientation.BOTTOM,
+                  totalNum: persons.length,
+                  stackNum: 3,
+                  swipeEdge: 4.0,
+                  maxWidth: MediaQuery.of(context).size.width * 0.9,
+                  maxHeight: MediaQuery.of(context).size.width * 0.9,
+                  minWidth: MediaQuery.of(context).size.width * 0.8,
+                  minHeight: MediaQuery.of(context).size.width * 0.8,
+                  cardBuilder: (context, index) => Card(
+                    child: ContactCard(p),
                   ),
-                },
-              )
-              .toList(),
-        );
+                  cardController: controller = CardController(),
+                  swipeUpdateCallback: (DragUpdateDetails details, Alignment align) {
+                    /// Get swiping card's alignment
+                    if (align.x < 0) {
+                      //Card is LEFT swiping
+                    } else if (align.x > 0) {
+                      //Card is RIGHT swiping
+                    }
+                  },
+                  swipeCompleteCallback: (CardSwipeOrientation orientation, int index) {
+                    /// Get orientation & index of swiped card!
+                  },
+                ),
+              },
+            )
+            //.toList(),
+            );
       },
     );
   }
