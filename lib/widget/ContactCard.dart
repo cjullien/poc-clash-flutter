@@ -49,16 +49,14 @@ class ContactCard extends StatelessWidget {
                       title: Text(person.firstname),
                       subtitle: Text(person.name),
                     ),
-                    Expanded(child: MemoryImageWidget(person.picture)),
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
-                          TextButtonConditional(person.email, "email", () => _launchMailURL(person.email)),
-                        ],
-                      ),
-                    )
+                    MemoryImageWidget(person.picture),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
+                        TextButtonConditional(person.email, "email", () => _launchMailURL(person.email)),
+                      ],
+                    ),
                   ],
                 ),
               ),
