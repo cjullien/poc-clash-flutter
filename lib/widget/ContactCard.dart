@@ -52,9 +52,9 @@ class ContactCard extends StatelessWidget {
                         subtitle: Text(person.name),
                       ),
                     ),
-                    Expanded(flex: 1, child: MemoryImageWidget(person.picture)),
+                    Expanded(flex: 5, child: MemoryImageWidget(person.picture)),
                     Expanded(
-                      flex: 1,
+                      flex: 5,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -66,7 +66,7 @@ class ContactCard extends StatelessWidget {
                   ],
                 ),
               ),
-              flex: 8,
+              flex: 15,
             ),
           ],
         ),
