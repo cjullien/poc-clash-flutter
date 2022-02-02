@@ -41,16 +41,11 @@ class ContactCard extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          ListTile(
+          const ListTile(
             title: Text(person.firstname),
             subtitle: Text(person.name),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              imageContainer,
-            ],
-          ),
+          imageContainer,
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
