@@ -38,7 +38,6 @@ class ContactCard extends StatelessWidget {
       ),
       elevation: 8,
       child: Container(
-        //width: 400,
         child: Row(
           children: [
             Expanded(
@@ -53,9 +52,9 @@ class ContactCard extends StatelessWidget {
                         subtitle: Text(person.name),
                       ),
                     ),
-                    Expanded(flex: 5, child: MemoryImageWidget(person.picture)),
+                    Expanded(flex: 1, child: MemoryImageWidget(person.picture)),
                     Expanded(
-                      flex: 5,
+                      flex: 1,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
