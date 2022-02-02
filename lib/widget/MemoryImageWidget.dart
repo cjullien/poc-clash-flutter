@@ -13,7 +13,7 @@ class MemoryImageWidget extends StatelessWidget {
     String imageToPrint = image.isNotEmpty ? image : default_base64Image;
     return Image.memory(
       base64Decode(imageToPrint),
-      width: MediaQuery.of(context).size.width * 0.7,
+      width: MediaQuery.of(context).size.width * 0.5,
     );
   }
 }
