@@ -26,8 +26,10 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
             children: persons.map((p) => ContactCard(p)).toList(),
           );
         } else {
-          return CircularProgressIndicator(
-            valueColor: new AlwaysStoppedAnimation<Color>(Colors.blue),
+          return Center(
+            child: CircularProgressIndicator(
+              valueColor: new AlwaysStoppedAnimation<Color>(Colors.blue),
+            ),
           );
         }
       },
