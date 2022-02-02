@@ -25,7 +25,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
             crossAxisCount: (MediaQuery.of(context).size.width ~/ 300),
             children: persons
                 .map((p) => {
-                      ContactCard(p)
+                      return ContactCard(p)
                     })
                 .toList(),
           );
