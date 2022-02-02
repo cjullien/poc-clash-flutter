@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/utils/FuturGeneric.dart';
@@ -43,13 +43,13 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return MaterialApp(
       title: _constantes.App.title,
-      home: CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          middle: const Text(_constantes.App.title),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(_constantes.App.title),
         ),
-        child: FutureListPersonBuilderWidget(persons, futureDynamic),
+        body: FutureListPersonBuilderWidget(persons, futureDynamic),
       ),
     );
   }
