@@ -19,8 +19,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           return GridView.count(
             primary: false,
-            padding: const EdgeInsets.all(20),
-            crossAxisSpacing: 100,
+            crossAxisSpacing: 10,
             mainAxisSpacing: 10,
             crossAxisCount: (MediaQuery.of(context).size.width ~/ 300),
             children: persons.map((p) => ContactCard(p)).toList(),
