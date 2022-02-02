@@ -50,10 +50,8 @@ class ContactCard extends StatelessWidget {
                       subtitle: Text(person.name),
                     ),
                     MemoryImageWidget(person.picture),
-
-                        TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
-                        TextButtonConditional(person.email, "email", () => _launchMailURL(person.email)),
-                    ),
+                    TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
+                    TextButtonConditional(person.email, "email", () => _launchMailURL(person.email)),
                   ],
                 ),
               ),
