@@ -45,11 +45,9 @@ class ContactCard extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 child: Column(
                   children: [
-                    Expanded(
-                      child: ListTile(
-                        title: Text(person.firstname),
-                        subtitle: Text(person.name),
-                      ),
+                    ListTile(
+                      title: Text(person.firstname),
+                      subtitle: Text(person.name),
                     ),
                     Expanded(child: MemoryImageWidget(person.picture)),
                     Expanded(
