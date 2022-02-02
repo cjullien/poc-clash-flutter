@@ -46,8 +46,8 @@ class _MyAppState extends State<MyApp> {
     return CupertinoApp(
       title: _constantes.App.title,
       home: CupertinoPageScaffold(
-        navigationBar: CuppertinoNavigationBar(
-          title: const Text(_constantes.App.title),
+        navigationBar: CupertinoNavigationBar(
+          middle: const Text(_constantes.App.title),
         ),
         child: FutureListPersonBuilderWidget(persons, futureDynamic),
       ),
