@@ -7,8 +7,11 @@ import 'package:adress_book/widget/MemoryImageWidget.dart';
 
 class ContactCard extends StatelessWidget {
   final Person person;
+  Widget imageContainer = null;
 
-  ContactCard(this.person) {}
+  ContactCard(this.person) {
+    imageContainer = MemoryImageWidget(person.picture);
+  }
 
   _launchPhoneURL(String phoneNumber) async {
     String url = 'tel:' + phoneNumber;
@@ -47,7 +50,7 @@ class ContactCard extends StatelessWidget {
                   title: Text(person.firstname),
                   subtitle: Text(person.name),
                 ),
-                MemoryImageWidget(person.picture),
+                imageContainer,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
