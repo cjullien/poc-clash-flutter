@@ -57,7 +57,9 @@ class _FutureListPersonBuilderWidget extends State<FutureListPersonBuilderWidget
                     ),
                     secondaryBackground: Container(
                       alignment: Alignment.centerRight,
-                      child: Icon(Icons.delete),
+                      child: FittedBox(
+                        child: Icon(Icons.delete),
+                      ),
                     ),
                   ),
                 )
