@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
                       onPressed: () {},
                     ),*/
                 );
-                Scaffold.of(context).showSnackBar(snackBar);
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
               },
             ),
             Padding(
@@ -76,7 +76,7 @@ class _MyAppState extends State<MyApp> {
                       onPressed: () {},
                     ),*/
                   );
-                  Scaffold.of(context).showSnackBar(snackBar);
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 },
               ),
             ),

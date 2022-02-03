@@ -8,7 +8,7 @@ import 'package:adress_book/utils/Constantes.dart' as _constantes;
 
 class ContactCard extends StatelessWidget {
   final Person person;
-  late Widget imageContainer;
+  late final Widget imageContainer;
 
   ContactCard(this.person) {
     imageContainer = MemoryImageWidget(person.picture);
