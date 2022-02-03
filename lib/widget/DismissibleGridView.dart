@@ -27,7 +27,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
               child: ContactCard(p),
               // Provide a function that tells the app
               // what to do after an item has been swiped away.
-              confirmDismiss: (direction) {
+              onDismissed: (direction) {
                 if (direction == DismissDirection.startToEnd) {
                   /// edit item
 
