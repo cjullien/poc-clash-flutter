@@ -40,7 +40,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                     ),*/
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  return false;
+                  return await false;
                 } else if (direction == DismissDirection.endToStart) {
                   final snackBar = SnackBar(
                     behavior: SnackBarBehavior.floating,
