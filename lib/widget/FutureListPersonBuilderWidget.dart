@@ -59,7 +59,7 @@ class _FutureListPersonBuilderWidget extends State<FutureListPersonBuilderWidget
                       alignment: Alignment.centerRight,
                       child: Icon(
                         Icons.delete,
-                        size: 20,
+                        size: 50,
                       ),
                     ),
                   ),
