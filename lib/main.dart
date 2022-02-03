@@ -45,7 +45,19 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: _constantes.App.title,
       home: Scaffold(
-        appBar: AppBar(
+        appBar: MyAppBar(),
+        body: FutureListPersonBuilderWidget(persons, futureDynamic),
+      ),
+    );
+  }
+}
+
+class MyAppBar extends AppBar {
+
+  MyAppBar() {}
+
+  Widget build(BuildContext context) {
+    return AppBar(
           leading: Icon(Icons.menu),
           title: Text(_constantes.App.title),
           actions: [
@@ -83,9 +95,6 @@ class _MyAppState extends State<MyApp> {
             Icon(Icons.more_vert),
           ],
           backgroundColor: Colors.grey,
-        ),
-        body: FutureListPersonBuilderWidget(persons, futureDynamic),
-      ),
-    );
+        )
   }
 }
