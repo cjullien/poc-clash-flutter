@@ -45,7 +45,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
               // Show a red background as the item is swiped away.
               background: Container(
                 alignment: Alignment.centerLeft,
-                child: MaterialBanner(content: Text('Suppression'), leading: CircleAvatar(child: Icon(Icons.edit))),
+                child: MaterialBanner(content: Text('Suppression'), leading: CircleAvatar(child: Icon(Icons.edit)), actions[]),
               ),
               secondaryBackground: Container(
                 alignment: Alignment.centerRight,
