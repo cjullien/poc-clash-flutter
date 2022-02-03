@@ -21,7 +21,7 @@ class FutureListPersonBuilderWidget extends StatelessWidget {
         } else {
           return Center(
             child: CircularProgressIndicator(
-              valueColor: new AlwaysStoppedAnimation<Color>(Colors.blue),
+              valueColor: new AlwaysStoppedAnimation<Color>(Colors.red),
             ),
           );
         }
