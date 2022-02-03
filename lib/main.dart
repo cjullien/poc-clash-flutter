@@ -50,6 +50,13 @@ class _MyAppState extends State<MyApp> {
           title: Text(_constantes.App.title),
           actions: [
             IconButton(
+              icon: const Icon(Icons.add_alert),
+              tooltip: 'Show Snackbar',
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('This is a snackbar')));
+              },
+            ),
+            IconButton(
               icon: Icon(Icons.person_add_alt),
               onPressed: () {
                 final snackBar = SnackBar(
@@ -60,7 +67,7 @@ class _MyAppState extends State<MyApp> {
                       onPressed: () {},
                     ),*/
                 );
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                Scaffold.of(context).showSnackBar(snackBar);
               },
             ),
             Padding(
