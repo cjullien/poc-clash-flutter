@@ -45,11 +45,24 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: _constantes.App.title,
       home: Scaffold(
-        bottomNavigationBar: BottomAppBar(
+        appBar: AppBar(
           leading: Icon(Icons.menu),
           title: Text(_constantes.App.title),
           actions: [
-            Icon(Icons.person_add_alt),
+            IconButton(
+              icon: Icon(Icons.person_add_alt),
+              onPressed: () {
+                final snackBar = SnackBar(
+                  behavior: SnackBarBehavior.floating,
+                  content: Text('TODO Ajouter une personne'),
+                  /*action: SnackBarAction(
+                      label: 'Action',
+                      onPressed: () {},
+                    ),*/
+                );
+                Scaffold.of(context).showSnackBar(snackBar);
+              },
+            ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Icon(Icons.search),
