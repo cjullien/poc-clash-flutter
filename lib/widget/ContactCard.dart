@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/widget/TextButtonConditional.dart';
 import 'package:adress_book/widget/MemoryImageWidget.dart';
+import 'package:adress_book/utils/Constantes.dart' as _constantes;
 
 class ContactCard extends StatelessWidget {
   final Person person;
@@ -36,7 +37,7 @@ class ContactCard extends StatelessWidget {
     return Card(
       shape: OutlineInputBorder(
         borderRadius: BorderRadius.circular(20),
-        borderSide: BorderSide(color: Colors.blueGrey),
+        borderSide: BorderSide(color: _constantes.App.appColor),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
