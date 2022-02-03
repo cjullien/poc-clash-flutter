@@ -46,9 +46,9 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                     behavior: SnackBarBehavior.floating,
                     content: Text('Suppression de { ${p.name} }'),
                   );
-                  setState(() {
+                  /*setState(() {
                     widget.persons.remove(p);
-                  });
+                  });*/
                   Scaffold.of(context).showSnackBar(snackBar);
 
                   /// delete
