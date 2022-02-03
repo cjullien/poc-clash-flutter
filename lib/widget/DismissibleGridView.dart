@@ -30,7 +30,16 @@ class _DismissibleGridView extends State<DismissibleGridView> {
               confirmDismiss: (direction) async {
                 if (direction == DismissDirection.startToEnd) {
                   /// edit item
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('TODO - edition de { ${p.name} } ')));
+
+                  final snackBar = SnackBar(
+                    behavior: SnackBarBehavior.floating,
+                    content: Text('TODO - edition de { ${p.name} }'),
+                    action: SnackBarAction(
+                      label: 'Action',
+                      onPressed: () {},
+                    ),
+                  );
+                  Scaffold.of(context).showSnackBar(snackBar);
                   return false;
                 } else if (direction == DismissDirection.endToStart) {
                   setState(() {
