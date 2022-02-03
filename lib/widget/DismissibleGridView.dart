@@ -30,7 +30,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
               confirmDismiss: (direction) async {
                 if (direction == DismissDirection.startToEnd) {
                   /// edit item
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('TODO - edition de {${p.name}} ')));
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('TODO - edition de { ${p.name} } ')));
                   return false;
                 } else if (direction == DismissDirection.endToStart) {
                   setState(() {
@@ -45,10 +45,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
               // Show a red background as the item is swiped away.
               background: Container(
                 alignment: Alignment.centerLeft,
-                child: Icon(
-                  Icons.edit,
-                  size: 40,
-                ),
+                child: MaterialBanner(leading: CircleAvatar(child: Icon(Icons.edit))),
               ),
               secondaryBackground: Container(
                 alignment: Alignment.centerRight,
