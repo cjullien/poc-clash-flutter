@@ -26,7 +26,7 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends StatelessWidget {
+class _MyAppState extends State<MyApp> {
   final List<Person> persons = [
     //Person(name: "test1")
   ];
