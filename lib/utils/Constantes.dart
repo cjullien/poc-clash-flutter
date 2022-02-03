@@ -1,5 +1,9 @@
+import 'dart:ui';
+import 'package:flutter/material.dart';
+
 class App {
   static const String title = 'Adresse Book';
+  static const Color appColor = Colors.grey;
 }
 
 class Url {
