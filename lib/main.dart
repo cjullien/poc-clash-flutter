@@ -46,7 +46,17 @@ class _MyAppState extends State<MyApp> {
       title: _constantes.App.title,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text(_constantes.App.title),
+          leading: Icon(Icons.menu),
+          title: Text(_constantes.App.title),
+          actions: [
+            Icon(Icons.favorite),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Icon(Icons.search),
+            ),
+            Icon(Icons.more_vert),
+          ],
+          backgroundColor: Colors.purple,
         ),
         body: FutureListPersonBuilderWidget(persons, futureDynamic),
       ),
