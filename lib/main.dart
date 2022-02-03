@@ -7,7 +7,17 @@ import 'package:adress_book/utils/FuturGeneric.dart';
 import 'package:adress_book/utils/Constantes.dart' as _constantes;
 import 'widget/FutureListPersonBuilderWidget.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyMaterialApp());
+
+class MyMaterialApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: _constantes.App.title,
+      home: MyApp(),
+    );
+  }
+}
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -16,7 +26,7 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends StatelessWidget {
   final List<Person> persons = [
     //Person(name: "test1")
   ];
@@ -25,7 +35,7 @@ class _MyAppState extends State<MyApp> {
     () => fetchDynamic(),
   );
 
-  _MyAppState() {
+  MyApp() {
     getData();
     super.initState();
   }
@@ -40,44 +50,14 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _constantes.App.title,
-      home: Scaffold(
-        appBar: MyAppBar(),
-        body: FutureListPersonBuilderWidget(persons, futureDynamic),
-      ),
-    );
-  }
-}
-
-class MyAppBar extends AppBar {
-  MyAppBar() {}
-
-  Widget build(BuildContext context) {
-    return AppBar(
-      leading: Icon(Icons.menu),
-      title: Text(_constantes.App.title),
-      actions: [
-        IconButton(
-          icon: Icon(Icons.person_add_alt),
-          onPressed: () {
-            final snackBar = SnackBar(
-              behavior: SnackBarBehavior.floating,
-              content: Text('TODO Ajouter une personne'),
-              /*action: SnackBarAction(
-                      label: 'Action',
-                      onPressed: () {},
-                    ),*/
-            );
-            Scaffold.of(context).showSnackBar(snackBar);
-          },
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          child: IconButton(
-            icon: Icon(Icons.search),
+    return Scaffold(
+      appBar: AppBar(
+        leading: Icon(Icons.menu),
+        title: Text(_constantes.App.title),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.person_add_alt),
             onPressed: () {
               final snackBar = SnackBar(
                 behavior: SnackBarBehavior.floating,
@@ -90,10 +70,28 @@ class MyAppBar extends AppBar {
               Scaffold.of(context).showSnackBar(snackBar);
             },
           ),
-        ),
-        Icon(Icons.more_vert),
-      ],
-      backgroundColor: Colors.grey,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                final snackBar = SnackBar(
+                  behavior: SnackBarBehavior.floating,
+                  content: Text('TODO Ajouter une personne'),
+                  /*action: SnackBarAction(
+                      label: 'Action',
+                      onPressed: () {},
+                    ),*/
+                );
+                Scaffold.of(context).showSnackBar(snackBar);
+              },
+            ),
+          ),
+          Icon(Icons.more_vert),
+        ],
+        backgroundColor: Colors.grey,
+      ),
+      body: FutureListPersonBuilderWidget(persons, futureDynamic),
     );
   }
 }
