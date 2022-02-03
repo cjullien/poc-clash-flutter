@@ -10,7 +10,7 @@ import 'widget/FutureListPersonBuilderWidget.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
   final List<Person> persons = [
     //Person(name: "test1")
   ];
-  late final Future<dynamic> futureDynamic = Future<dynamic>.delayed(
+  final Future<dynamic> futureDynamic = Future<dynamic>.delayed(
     const Duration(seconds: 1),
     () => fetchDynamic(),
   );
