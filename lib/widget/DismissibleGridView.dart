@@ -40,6 +40,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                     ),*/
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  return Future.value(false);
                 } else if (direction == DismissDirection.endToStart) {
                   final snackBar = SnackBar(
                     behavior: SnackBarBehavior.floating,
@@ -53,6 +54,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                   /// delete
                   //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} dismissed')));
                 }
+                return Future.value(true);
               },
               // Show a red background as the item is swiped away.
               background: Container(
