@@ -34,10 +34,10 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                   final snackBar = SnackBar(
                     behavior: SnackBarBehavior.floating,
                     content: Text('TODO - edition de { ${p.name} }'),
-                    action: SnackBarAction(
+                    /*action: SnackBarAction(
                       label: 'Action',
                       onPressed: () {},
-                    ),
+                    ),*/
                   );
                   Scaffold.of(context).showSnackBar(snackBar);
                   return false;
