@@ -27,7 +27,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
               child: ContactCard(p),
               // Provide a function that tells the app
               // what to do after an item has been swiped away.
-              confirmDismiss: (direction) async {
+              confirmDismiss: (direction) {
                 if (direction == DismissDirection.startToEnd) {
                   /// edit item
 
@@ -40,21 +40,19 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                     ),*/
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  return false;
                 } else if (direction == DismissDirection.endToStart) {
                   final snackBar = SnackBar(
                     behavior: SnackBarBehavior.floating,
                     content: Text('Suppression de { ${p.name} }'),
                   );
                   if (this.mounted) {
-                    //setState(() => widget.persons.remove(p));
+                    setState(() => widget.persons.remove(p));
                   }
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
                   /// delete
                   //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} dismissed')));
                 }
-                return true;
               },
               // Show a red background as the item is swiped away.
               background: Container(
