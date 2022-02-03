@@ -47,16 +47,14 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                     content: Text('Suppression de { ${p.name} }'),
                   );
                   if (this.mounted) {
-                    setState(() {
-                      widget.persons.remove(p);
-                    });
+                    setState(() => widget.persons.remove(p));
                   }
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
                   /// delete
                   //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} dismissed')));
-                  return true;
                 }
+                return true;
               },
               // Show a red background as the item is swiped away.
               background: Container(
