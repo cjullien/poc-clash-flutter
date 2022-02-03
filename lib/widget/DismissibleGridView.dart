@@ -44,13 +44,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                 } else if (direction == DismissDirection.endToStart) {
                   final snackBar = SnackBar(
                     behavior: SnackBarBehavior.floating,
-                    content: Text('TODO - edition de { ${p.name} }'),
-                    action: SnackBarAction(
-                      label: 'Canceled',
-                      onPressed: () {
-                        widget.persons.add(p);
-                      },
-                    ),
+                    content: Text('TODO - Suppression de { ${p.name} }'),
                   );
                   setState(() {
                     widget.persons.remove(p);
