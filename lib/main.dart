@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
           leading: Icon(Icons.menu),
           title: Text(_constantes.App.title),
           actions: [
-            Icon(Icons.add_circle),
+            Icon(Icons.person_add_alt),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Icon(Icons.search),
