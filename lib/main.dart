@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: _constantes.App.title,
       home: Scaffold(
-        appBar: AppBar(
+        bottomNavigationBar: BottomAppBar(
           leading: Icon(Icons.menu),
           title: Text(_constantes.App.title),
           actions: [
