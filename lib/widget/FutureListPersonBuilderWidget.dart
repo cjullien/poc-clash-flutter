@@ -53,7 +53,10 @@ class _FutureListPersonBuilderWidget extends State<FutureListPersonBuilderWidget
                     // Show a red background as the item is swiped away.
                     background: Container(
                       alignment: Alignment.centerLeft,
-                      child: Icon(Icons.edit),
+                      child: Icon(
+                        Icons.edit,
+                        size: 40,
+                      ),
                     ),
                     secondaryBackground: Container(
                       alignment: Alignment.centerRight,
