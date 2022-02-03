@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
             ),
             Icon(Icons.more_vert),
           ],
-          backgroundColor: Colors.purple,
+          backgroundColor: Colors.grey,
         ),
         body: FutureListPersonBuilderWidget(persons, futureDynamic),
       ),
