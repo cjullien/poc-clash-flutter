@@ -27,7 +27,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
               child: ContactCard(p),
               // Provide a function that tells the app
               // what to do after an item has been swiped away.
-              confirmDismiss: (direction) async {
+              confirmDismiss: (direction) {
                 if (direction == DismissDirection.startToEnd) {
                   /// edit item
 
@@ -40,7 +40,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                     ),*/
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  return await false;
+                  return false;
                 } else if (direction == DismissDirection.endToStart) {
                   final snackBar = SnackBar(
                     behavior: SnackBarBehavior.floating,
