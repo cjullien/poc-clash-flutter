@@ -42,9 +42,19 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                   Scaffold.of(context).showSnackBar(snackBar);
                   return false;
                 } else if (direction == DismissDirection.endToStart) {
-                  setState(() {
-                    widget.persons.remove(p);
-                  });
+                  final snackBar = SnackBar(
+                    behavior: SnackBarBehavior.floating,
+                    content: Text('TODO - edition de { ${p.name} }'),
+                    action: SnackBarAction(
+                      label: 'Confirm',
+                      onPressed: () {
+                        setState(() {
+                          widget.persons.remove(p);
+                        });
+                      },
+                    ),
+                  );
+                  Scaffold.of(context).showSnackBar(snackBar);
 
                   /// delete
                   //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} dismissed')));
