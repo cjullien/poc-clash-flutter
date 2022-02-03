@@ -1,5 +1,8 @@
+import 'colors.dart';
+
 class App {
   static const String title = 'Adresse Book';
+  static const Color appColor = Colors.grey;
 }
 
 class Url {
