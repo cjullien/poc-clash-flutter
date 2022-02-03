@@ -65,7 +65,20 @@ class _MyAppState extends State<MyApp> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Icon(Icons.search),
+              child: IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {
+                  final snackBar = SnackBar(
+                    behavior: SnackBarBehavior.floating,
+                    content: Text('TODO Ajouter une personne'),
+                    /*action: SnackBarAction(
+                      label: 'Action',
+                      onPressed: () {},
+                    ),*/
+                  );
+                  Scaffold.of(context).showSnackBar(snackBar);
+                },
+              ),
             ),
             Icon(Icons.more_vert),
           ],
