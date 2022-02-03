@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
       title: _constantes.App.title,
       home: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.menu),
+          //leading: Icon(Icons.menu),
           title: Text(_constantes.App.title),
           actions: [
             IconButton(
