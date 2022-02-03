@@ -44,47 +44,51 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _constantes.App.title,
-      home: Scaffold(
-        appBar: AppBar(
-          leading: Icon(Icons.menu),
-          title: Text(_constantes.App.title),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.person_add_alt),
-              onPressed: () {
-                final snackBar = SnackBar(
-                  behavior: SnackBarBehavior.floating,
-                  content: Text('TODO Ajouter une personne'),
-                  /*action: SnackBarAction(
+      home: Builder(
+        builder: (context) {
+          return Scaffold(
+            appBar: AppBar(
+              leading: Icon(Icons.menu),
+              title: Text(_constantes.App.title),
+              actions: [
+                IconButton(
+                  icon: Icon(Icons.person_add_alt),
+                  onPressed: () {
+                    final snackBar = SnackBar(
+                      behavior: SnackBarBehavior.floating,
+                      content: Text('TODO Ajouter une personne'),
+                      /*action: SnackBarAction(
                       label: 'Action',
                       onPressed: () {},
                     ),*/
-                );
-                Scaffold.of(context).showSnackBar(snackBar);
-              },
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: IconButton(
-                icon: Icon(Icons.search),
-                onPressed: () {
-                  final snackBar = SnackBar(
-                    behavior: SnackBarBehavior.floating,
-                    content: Text('TODO Ajouter une personne'),
-                    /*action: SnackBarAction(
+                    );
+                    Scaffold.of(context).showSnackBar(snackBar);
+                  },
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: IconButton(
+                    icon: Icon(Icons.search),
+                    onPressed: () {
+                      final snackBar = SnackBar(
+                        behavior: SnackBarBehavior.floating,
+                        content: Text('TODO Ajouter une personne'),
+                        /*action: SnackBarAction(
                       label: 'Action',
                       onPressed: () {},
                     ),*/
-                  );
-                  Scaffold.of(context).showSnackBar(snackBar);
-                },
-              ),
+                      );
+                      Scaffold.of(context).showSnackBar(snackBar);
+                    },
+                  ),
+                ),
+                Icon(Icons.more_vert),
+              ],
+              backgroundColor: Colors.grey,
             ),
-            Icon(Icons.more_vert),
-          ],
-          backgroundColor: Colors.grey,
-        ),
-        body: FutureListPersonBuilderWidget(persons, futureDynamic),
+            body: FutureListPersonBuilderWidget(persons, futureDynamic),
+          );
+        },
       ),
     );
   }
