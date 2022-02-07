@@ -19,7 +19,7 @@ class Person {
         name: json['name'],
         email: json['email'],
         phone: json['phone'],
-        isDev: json.containsKey('isDev') ? json['isDev'] as bool : false,
+        isDev: json['isDev'],
         picture: json.containsKey('picture') ? json['picture'] : "",
       );
 
