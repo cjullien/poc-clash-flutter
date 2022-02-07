@@ -39,7 +39,7 @@ class ContactCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         borderSide: BorderSide(color: _constantes.App.appColor),
       ),
-      color: (),
+      color: person.isDev ? Colors.redAccent : Colors.green
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

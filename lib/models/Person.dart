@@ -1,12 +1,13 @@
 import 'dart:convert';
 
 class Person {
-  Person({this.firstname = "", this.name = "", this.email = "", this.phone = "", this.picture = ""});
+  Person({this.firstname = "", this.name = "", this.email = "", this.phone = "", this.isDev = false, this.picture = ""});
 
   final String firstname;
   final String name;
   final String email;
   final String phone;
+  final bool isDev;
   final String picture;
 
   Map<String, dynamic> toJson() => _$PersonToJson(this);
@@ -18,6 +19,7 @@ class Person {
         name: json['name'],
         email: json['email'],
         phone: json['phone'],
+        isDev: json.containsKey('isDev') ? json['isDev'] : "",
         picture: json.containsKey('picture') ? json['picture'] : "",
       );
 
@@ -26,6 +28,7 @@ class Person {
         'name': instance.name,
         'email': instance.email,
         'phone': instance.phone,
+        'isDev': instance.isDev,
         'picture': instance.picture,
       };
 }
