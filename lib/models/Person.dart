@@ -40,12 +40,10 @@ String usershalToJson(Usershal data) => json.encode(data.toJson());
 
 class Usershal {
   Usershal({
-    this.embedded = embeddedCst,
+    this.embedded,
   });
 
   final Embedded embedded;
-  static const List<Person> usersCst = [];
-  static const Embedded embeddedCst = Embedded(usersCst);
 
   factory Usershal.fromJson(Map<String, dynamic> json) => Usershal(
         embedded: Embedded.fromJson(json["_embedded"]),
@@ -57,10 +55,11 @@ class Usershal {
 }
 
 class Embedded {
-  Embedded({this.users = usersCst});
+  Embedded({
+    this.users,
+  });
 
   List<Person> users;
-  static const List<Person> usersCst = [];
 
   factory Embedded.fromJson(Map<String, dynamic> json) => Embedded(
         users: List<Person>.from(json["users"].map((x) => Person.fromJson(x))),
