@@ -59,10 +59,10 @@ class Embedded {
     this.users,
   });
 
-  List<User> users;
+  List<Person> users;
 
   factory Embedded.fromJson(Map<String, dynamic> json) => Embedded(
-        users: List<User>.from(json["users"].map((x) => User.fromJson(x))),
+        users: List<Person>.from(json["users"].map((x) => Person.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -70,8 +70,8 @@ class Embedded {
       };
 }
 
-class User {
-  User({
+class Person {
+  Person({
     this.username = "",
     this.name = "",
     this.email = "",
@@ -83,7 +83,7 @@ class User {
   String email;
   String phone;
 
-  factory User.fromJson(Map<String, dynamic> json) => User(
+  factory Person.fromJson(Map<String, dynamic> json) => Person(
         username: json["username"],
         name: json["name"],
         email: json["email"],
