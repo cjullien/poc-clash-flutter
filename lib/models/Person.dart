@@ -43,7 +43,7 @@ class Usershal {
     this.embedded,
   });
 
-  Embedded embedded;
+  late Embedded embedded;
 
   factory Usershal.fromJson(Map<String, dynamic> json) => Usershal(
         embedded: Embedded.fromJson(json["_embedded"]),
