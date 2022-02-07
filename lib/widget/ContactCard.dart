@@ -45,7 +45,7 @@ class ContactCard extends StatelessWidget {
         children: [
           ListTile(
             title: Text(person.name.toUpperCase()),
-            subtitle: Text(person.firstname),
+            subtitle: Text(person.isDev),
           ),
           imageContainer,
           Row(
