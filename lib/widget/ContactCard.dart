@@ -39,12 +39,22 @@ class ContactCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         borderSide: BorderSide(color: _constantes.App.appColor),
       ),
-      //color: person.isDev ? Colors.white : Colors.redAccent,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           ListTile(
-            title: Text(person.name.toUpperCase(), style: person.isDev ? TextStyle(fontWeight: FontWeight.bold) : null),
+            title: Text(
+              person.name.toUpperCase(),
+              style: person.isDev
+                  ? TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.green,
+                    )
+                  : TextStyle(
+                      fontWeight: FontWeight.normal,
+                      color: Colors.redAccent,
+                    ),
+            ),
             subtitle: Text(person.firstname),
           ),
           imageContainer,
