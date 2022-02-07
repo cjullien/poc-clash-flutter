@@ -1,4 +1,6 @@
-/*class Person {
+import 'dart:convert';
+
+class Person {
   Person({this.firstname = "", this.name = "", this.email = "", this.phone = "", this.picture = ""});
 
   final String firstname;
@@ -27,12 +29,10 @@
         'picture': instance.picture,
       };
 }
-*/
+
 // To parse this JSON data, do
 //
 //     final usershal = usershalFromJson(jsonString);
-
-import 'dart:convert';
 
 Usershal usershalFromJson(String str) => Usershal.fromJson(json.decode(str));
 
@@ -67,33 +67,5 @@ class Embedded {
 
   Map<String, dynamic> toJson() => {
         "users": List<dynamic>.from(users.map((x) => x.toJson())),
-      };
-}
-
-class Person {
-  Person({
-    this.username = "",
-    this.name = "",
-    this.email = "",
-    this.phone = "",
-  });
-
-  String username;
-  String name;
-  String email;
-  String phone;
-
-  factory Person.fromJson(Map<String, dynamic> json) => Person(
-        username: json["username"],
-        name: json["name"],
-        email: json["email"],
-        phone: json["phone"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "username": username,
-        "name": name,
-        "email": email,
-        "phone": phone,
       };
 }
