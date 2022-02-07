@@ -14,7 +14,7 @@ class Person {
   String getJsonElement(element) => element == null ? "" : element;
 
   factory Person.fromJson(Map<String, dynamic> json) => Person(
-        firstname: json['username'] as String,
+        firstname: json['firstname'] as String,
         name: json['name'],
         email: json['email'],
         phone: json['phone'],
