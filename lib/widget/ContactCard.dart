@@ -44,7 +44,7 @@ class ContactCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           ListTile(
-            title: Text(person.name.toUpperCase()),
+            title: Text(person.name.toUpperCase(), style: person.isDev ? TextStyle(fontWeight: FontWeight.bold) : null),
             subtitle: Text(person.firstname),
           ),
           imageContainer,
