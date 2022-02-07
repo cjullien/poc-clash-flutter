@@ -15,11 +15,11 @@ class Person {
   String getJsonElement(element) => element == null ? "" : element;
 
   factory Person.fromJson(Map<String, dynamic> json) => Person(
-        firstname: json['firstname'] as String,
+        firstname: json['firstname'],
         name: json['name'],
         email: json['email'],
         phone: json['phone'],
-        isDev: json.containsKey('isDev') ? json['isDev'] : false,
+        isDev: json.containsKey('isDev') ? json['isDev'] as bool : false,
         picture: json.containsKey('picture') ? json['picture'] : "",
       );
 
