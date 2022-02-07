@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
     futureDynamic
         .then((resultList) => setState(() {
               persons.add(Person(firstname: resultList.toString()));
-              persons.addAll(List<Person>.from(resultList.map((model) => Person.fromJson(model))));
+              // persons.addAll(List<Person>.from(resultList.map((model) => Person.fromJson(model))));
             }))
         .catchError((error) {
       print(error);
