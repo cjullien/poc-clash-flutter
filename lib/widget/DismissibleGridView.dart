@@ -17,6 +17,8 @@ class _DismissibleGridView extends State<DismissibleGridView> {
     return GridView.count(
       primary: false,
       padding: const EdgeInsets.all(20),
+      crossAxisSpacing: 2,
+      mainAxisSpacing: 2,
       crossAxisCount: (MediaQuery.of(context).size.width ~/ 300),
       children: widget.persons
           .map(
