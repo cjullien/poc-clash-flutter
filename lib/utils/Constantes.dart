@@ -7,5 +7,5 @@ class App {
 }
 
 class Url {
-  static const url = 'https://8080-cjullien-pocclashcodevsl-fd6igzeth8k.ws-eu30.gitpod.io/api/users';
+  static const url = 'https://8080-cjullien-pocclashcodevsl-tim4qukk28f.ws-eu31.gitpod.io/api/users';
 }
