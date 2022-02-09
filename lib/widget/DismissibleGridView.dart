@@ -46,12 +46,10 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                     content: Text('Suppression de { ${p.name} }'),
                   );
                   if (this.mounted) {
-                    setState(() => {
-                          widget.persons.remove(p);
-                          if(widget.persons.length == 0) {
-                            Center("AdressBook Vide");
-                          }
-                        });
+                    setState(() => widget.persons.remove(p));
+                    if (widget.persons.length == 0) {
+                      Center("AdressBook Vide");
+                    }
                   }
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
