@@ -14,17 +14,17 @@ class ContactCard extends StatelessWidget {
     imageContainer = MemoryImageWidget(person.picture);
   }
 
-  _launchPhoneURL(String phoneNumber) async {
+  _launchPhoneURL(String phoneNumber) {
     String url = 'tel:' + phoneNumber;
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
+    _lauch(url);
   }
 
-  _launchMailURL(String email) async {
+  _launchMailURL(String email) {
     String url = 'mailto:' + email + '?subject=<subject>&body=<body>';
+    _lauch(url);
+  }
+
+  _lauch(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
