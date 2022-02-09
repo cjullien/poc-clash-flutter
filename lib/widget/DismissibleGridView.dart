@@ -49,7 +49,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                     setState(() => {
                           widget.persons.remove(p);
                           if(widget.persons.length == 0) {
-                            return Center("AdressBook Vide");
+                            Center("AdressBook Vide");
                           }
                         });
                   }
