@@ -67,6 +67,7 @@ class ContactCard extends StatelessWidget {
                       onPressed: () {},
                     ),*/
     );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
     _lauch(context, url);
   }
 
@@ -80,11 +81,11 @@ class ContactCard extends StatelessWidget {
                       onPressed: () {},
                     ),*/
     );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
     _lauch(context, url);
   }
 
   _lauch(BuildContext context, String url) async {
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
     if (await canLaunch(url)) {
       await launch(url);
     } else {
