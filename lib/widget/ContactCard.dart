@@ -36,7 +36,7 @@ class ContactCard extends StatelessWidget {
                     )
                   : TextStyle(
                       fontWeight: FontWeight.normal,
-                      fontSize: 12,
+                      fontSize: 20,
                       color: Colors.redAccent,
                     ),
             ),
