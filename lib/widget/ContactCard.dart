@@ -59,20 +59,15 @@ class ContactCard extends StatelessWidget {
 
   _launchPhoneURL(BuildContext context, String phoneNumber) {
     String url = 'tel:' + phoneNumber;
-    final snackBar = SnackBar(
-      behavior: SnackBarBehavior.floating,
-      content: Text('TODO - action sur { ${url} }'),
-      /*action: SnackBarAction(
-                      label: 'Action',
-                      onPressed: () {},
-                    ),*/
-    );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
     _lauch(context, url);
   }
 
   _launchMailURL(BuildContext context, String email) {
     String url = 'mailto:' + email + '?subject=<subject>&body=<body>';
+    _lauch(context, url);
+  }
+
+  _lauch(BuildContext context, String url) async {
     final snackBar = SnackBar(
       behavior: SnackBarBehavior.floating,
       content: Text('TODO - action sur { ${url} }'),
@@ -82,10 +77,6 @@ class ContactCard extends StatelessWidget {
                     ),*/
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
-    _lauch(context, url);
-  }
-
-  _lauch(BuildContext context, String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
