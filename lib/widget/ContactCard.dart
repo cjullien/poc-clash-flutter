@@ -75,7 +75,7 @@ class ContactCard extends StatelessWidget {
     }
     final snackBar = SnackBar(
       behavior: SnackBarBehavior.floating,
-      content: Text('TODO - edition de { ${url} }'),
+      content: Text('TODO - action sur { ${url} }'),
       /*action: SnackBarAction(
                       label: 'Action',
                       onPressed: () {},
