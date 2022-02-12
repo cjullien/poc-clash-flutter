@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/widget/ContactCard.dart';
-import 'package:adress_book/widget/FutureListPersonBuilderWidget.dart';
+import 'package:adress_book/utils/FuturGeneric.dart' as httpservice;
 
 class DismissibleGridView extends StatefulWidget {
   final List<Person> persons;
@@ -48,7 +48,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                   );
                   if (this.mounted) {
                     setState(() => widget.persons.remove(p));
-                    deleteDynamic(p.id);
+                    httpservice.deleteDynamic(p.id);
                   }
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
@@ -75,16 +75,5 @@ class _DismissibleGridView extends State<DismissibleGridView> {
           )
           .toList(),
     );
-  }
-
-  Future<dynamic> deleteDynamic(int id) async {
-    final url = Uri.parse(_constantes.Url.url + '/${id}');
-    final request = http.Request("DELETE", url);
-    request.headers.addAll(<String, String>{
-      "Accept": "application/json",
-    });
-    final response = await request.send();
-    if (response.statusCode != 200) return Future.error("error: status code ${response.statusCode}");
-    return await response.stream.bytesToString();
   }
 }
