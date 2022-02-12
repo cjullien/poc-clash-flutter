@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/utils/FuturGeneric.dart';
 import 'package:adress_book/utils/Constantes.dart' as _constantes;
-import 'widget/FutureListPersonBuilderWidget.dart';
+import 'package:adress_book/widget/FutureListPersonBuilderWidget.dart';
 
 void main() => runApp(const MyApp());
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/widget/ContactCard.dart';
+import 'package:adress_book/widget/FutureListPersonBuilderWidget.dart';
 
 class DismissibleGridView extends StatefulWidget {
   final List<Person> persons;
