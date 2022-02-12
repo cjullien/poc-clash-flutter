@@ -68,11 +68,6 @@ class ContactCard extends StatelessWidget {
   }
 
   _lauch(BuildContext context, String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
     final snackBar = SnackBar(
       behavior: SnackBarBehavior.floating,
       content: Text('TODO - action sur { ${url} }'),
@@ -82,5 +77,10 @@ class ContactCard extends StatelessWidget {
                     ),*/
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
