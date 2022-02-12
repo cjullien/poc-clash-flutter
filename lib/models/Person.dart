@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 class Person {
-  Person({this.id = "", this.firstname = "", this.name = "", this.email = "", this.phone = "", this.isDev = false, this.picture = ""});
+  Person({this.id = 0, this.firstname = "", this.name = "", this.email = "", this.phone = "", this.isDev = false, this.picture = ""});
 
-  final String id;
+  final int id;
   final String firstname;
   final String name;
   final String email;
