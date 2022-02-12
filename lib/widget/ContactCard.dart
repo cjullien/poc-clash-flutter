@@ -70,11 +70,7 @@ class ContactCard extends StatelessWidget {
   _lauch(BuildContext context, String url) async {
     final snackBar = SnackBar(
       behavior: SnackBarBehavior.floating,
-      content: Text('TODO - action sur { ${url} }'),
-      /*action: SnackBarAction(
-                      label: 'Action',
-                      onPressed: () {},
-                    ),*/
+      content: Text('action sur { ${url} }'),
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
     if (await canLaunch(url)) {
