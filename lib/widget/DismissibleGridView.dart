@@ -44,7 +44,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                 } else if (direction == DismissDirection.endToStart) {
                   final snackBar = SnackBar(
                     behavior: SnackBarBehavior.floating,
-                    content: Text('Suppression de { ${p.name} }'),
+                    content: Text('Suppression de { ${p.name} ${p.firstname} }'),
                   );
                   if (this.mounted) {
                     setState(() => widget.persons.remove(p));
