@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class Person {
   Person({this.id = 0, this.firstname = "", this.name = "", this.email = "", this.phone = "", this.isDev = false, this.picture = ""});
 
