@@ -34,7 +34,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
 
                   final snackBar = SnackBar(
                     behavior: SnackBarBehavior.floating,
-                    content: Text('TODO - edition de { ${p.name} }'),
+                    content: Text('TODO - edition de { ${p.lastname} }'),
                     /*action: SnackBarAction(
                       label: 'Action',
                       onPressed: () {},
@@ -44,16 +44,13 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                 } else if (direction == DismissDirection.endToStart) {
                   final snackBar = SnackBar(
                     behavior: SnackBarBehavior.floating,
-                    content: Text('Suppression de { ${p.name} ${p.firstname} }'),
+                    content: Text('Suppression de { ${p.lastname} ${p.firstname} }'),
                   );
                   if (this.mounted) {
                     setState(() => widget.persons.remove(p));
                     httpservice.deleteDynamic(p.id);
                   }
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-
-                  /// delete
-                  //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} dismissed')));
                 }
               },
               // Show a red background as the item is swiped away.

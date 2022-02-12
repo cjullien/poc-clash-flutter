@@ -27,7 +27,7 @@ class ContactCard extends StatelessWidget {
         children: [
           ListTile(
             title: Text(
-              person.name.toUpperCase(),
+              person.lastname.toUpperCase(),
               style: person.isDev
                   ? TextStyle(
                       fontWeight: FontWeight.bold,
