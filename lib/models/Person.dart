@@ -1,8 +1,9 @@
 import 'dart:convert';
 
 class Person {
-  Person({this.firstname = "", this.name = "", this.email = "", this.phone = "", this.isDev = false, this.picture = ""});
+  Person({this.id = 0, this.firstname = "", this.name = "", this.email = "", this.phone = "", this.isDev = false, this.picture = ""});
 
+  final int id;
   final String firstname;
   final String name;
   final String email;
@@ -15,6 +16,7 @@ class Person {
   String getJsonElement(element) => element == null ? "" : element;
 
   factory Person.fromJson(Map<String, dynamic> json) => Person(
+        id: json['id'],
         firstname: json['firstname'],
         name: json['name'],
         email: json['email'],
@@ -24,6 +26,7 @@ class Person {
       );
 
   Map<String, dynamic> _$PersonToJson(Person instance) => <String, dynamic>{
+        'id': instance.id,
         'firstname': instance.firstname,
         'name': instance.name,
         'email': instance.email,
