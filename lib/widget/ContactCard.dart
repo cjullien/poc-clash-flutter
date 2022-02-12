@@ -14,24 +14,6 @@ class ContactCard extends StatelessWidget {
     imageContainer = MemoryImageWidget(person.picture);
   }
 
-  _launchPhoneURL(String phoneNumber) async {
-    String url = 'tel:' + phoneNumber;
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
-  _launchMailURL(String email) async {
-    String url = 'mailto:' + email + '?subject=<subject>&body=<body>';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -39,12 +21,26 @@ class ContactCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         borderSide: BorderSide(color: _constantes.App.appColor),
       ),
+      //color: person.isDev ? Colors.white : Colors.redAccent,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           ListTile(
-            title: Text(person.firstname),
-            subtitle: Text(person.name),
+            title: Text(
+              person.lastname.toUpperCase(),
+              style: person.isDev
+                  ? TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                      color: Colors.green,
+                    )
+                  : TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: 20,
+                      color: Colors.redAccent,
+                    ),
+            ),
+            subtitle: Text(person.firstname),
           ),
           imageContainer,
           Row(
@@ -59,5 +55,23 @@ class ContactCard extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  _launchPhoneURL(String phoneNumber) {
+    String url = 'tel:' + phoneNumber;
+    _lauch(url);
+  }
+
+  _launchMailURL(String email) {
+    String url = 'mailto:' + email + '?subject=<subject>&body=<body>';
+    _lauch(url);
+  }
+
+  _lauch(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

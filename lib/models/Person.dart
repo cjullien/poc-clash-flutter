@@ -1,10 +1,12 @@
 class Person {
-  Person({this.firstname = "", this.name = "", this.email = "", this.phone = "", this.picture = ""});
+  Person({this.id = 0, this.firstname = "", this.lastname = "", this.email = "", this.phone = "", this.isDev = false, this.picture = ""});
 
+  final int id;
   final String firstname;
-  final String name;
+  final String lastname;
   final String email;
   final String phone;
+  final bool isDev;
   final String picture;
 
   Map<String, dynamic> toJson() => _$PersonToJson(this);
@@ -12,18 +14,22 @@ class Person {
   String getJsonElement(element) => element == null ? "" : element;
 
   factory Person.fromJson(Map<String, dynamic> json) => Person(
-        firstname: json['username'] as String,
-        name: json['name'],
+        id: json['id'],
+        firstname: json['firstname'],
+        lastname: json['lastname'],
         email: json['email'],
         phone: json['phone'],
+        isDev: json['dev'],
         picture: json.containsKey('picture') ? json['picture'] : "",
       );
 
   Map<String, dynamic> _$PersonToJson(Person instance) => <String, dynamic>{
+        'id': instance.id,
         'firstname': instance.firstname,
-        'name': instance.name,
+        'lastname': instance.lastname,
         'email': instance.email,
         'phone': instance.phone,
+        'isDev': instance.isDev,
         'picture': instance.picture,
       };
 }

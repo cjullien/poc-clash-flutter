@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:adress_book/models/Person.dart';
 import 'package:adress_book/widget/ContactCard.dart';
+import 'package:adress_book/utils/FuturGeneric.dart' as httpservice;
 
 class DismissibleGridView extends StatefulWidget {
   final List<Person> persons;
@@ -16,7 +17,7 @@ class _DismissibleGridView extends State<DismissibleGridView> {
   Widget build(BuildContext context) {
     return GridView.count(
       primary: false,
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(30),
       crossAxisSpacing: 1,
       mainAxisSpacing: 1,
       crossAxisCount: (MediaQuery.of(context).size.width ~/ 300),
@@ -27,34 +28,30 @@ class _DismissibleGridView extends State<DismissibleGridView> {
               child: ContactCard(p),
               // Provide a function that tells the app
               // what to do after an item has been swiped away.
-              confirmDismiss: (direction) async {
+              onDismissed: (direction) {
                 if (direction == DismissDirection.startToEnd) {
                   /// edit item
 
                   final snackBar = SnackBar(
                     behavior: SnackBarBehavior.floating,
-                    content: Text('TODO - edition de { ${p.name} }'),
+                    content: Text('TODO - edition de { ${p.lastname} }'),
                     /*action: SnackBarAction(
                       label: 'Action',
                       onPressed: () {},
                     ),*/
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  return false;
                 } else if (direction == DismissDirection.endToStart) {
                   final snackBar = SnackBar(
                     behavior: SnackBarBehavior.floating,
-                    content: Text('Suppression de { ${p.name} }'),
+                    content: Text('Suppression de { ${p.lastname} ${p.firstname} }'),
                   );
                   if (this.mounted) {
                     setState(() => widget.persons.remove(p));
+                    httpservice.deleteDynamic(p.id);
                   }
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-
-                  /// delete
-                  //ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${person.name} dismissed')));
                 }
-                return true;
               },
               // Show a red background as the item is swiped away.
               background: Container(
