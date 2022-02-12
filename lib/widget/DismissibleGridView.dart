@@ -49,8 +49,8 @@ class _DismissibleGridView extends State<DismissibleGridView> {
                   if (this.mounted) {
                     setState(() => widget.persons.remove(p));
                     httpservice.deleteDynamic(p.id);
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   }
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }
               },
               // Show a red background as the item is swiped away.
