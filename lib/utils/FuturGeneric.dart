@@ -11,14 +11,3 @@ Future<dynamic> fetchDynamic() async {
     throw Exception('Failed to load dynamic');
   }
 }
-
-Future<dynamic> deleteDynamic(int id) async {
-  final url = Uri.parse(_constantes.Url.url + '/${id}');
-  final request = http.Request("DELETE", url);
-  request.headers.addAll(<String, String>{
-    "Accept": "application/json",
-  });
-  final response = await request.send();
-  if (response.statusCode != 200) return Future.error("error: status code ${response.statusCode}");
-  return await response.stream.bytesToString();
-}
