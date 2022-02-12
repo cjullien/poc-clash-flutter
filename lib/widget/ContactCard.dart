@@ -46,9 +46,9 @@ class ContactCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(person.phone)),
+              TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(context, person.phone)),
               const SizedBox(width: 8),
-              TextButtonConditional(person.email, "email", () => _launchMailURL(person.email)),
+              TextButtonConditional(person.email, "email", () => _launchMailURL(context, person.email)),
               const SizedBox(width: 8),
             ],
           ),
@@ -57,17 +57,22 @@ class ContactCard extends StatelessWidget {
     );
   }
 
-  _launchPhoneURL(String phoneNumber) {
+  _launchPhoneURL(BuildContext context, String phoneNumber) {
     String url = 'tel:' + phoneNumber;
-    _lauch(url);
+    _lauch(context, url);
   }
 
-  _launchMailURL(String email) {
+  _launchMailURL(BuildContext context, String email) {
     String url = 'mailto:' + email + '?subject=<subject>&body=<body>';
-    _lauch(url);
+    _lauch(context, url);
   }
 
-  _lauch(String url) async {
+  _lauch(BuildContext context, String url) async {
+    final snackBar = SnackBar(
+      behavior: SnackBarBehavior.floating,
+      content: Text('action sur { ${url} }'),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
     if (await canLaunch(url)) {
       await launch(url);
     } else {

@@ -11,7 +11,7 @@ class TextButtonConditional extends StatelessWidget {
     if (value.isNotEmpty) {
       return TextButton(
         child: Text(text),
-        onPressed: () => callBackOnPressed,
+        onPressed: callBackOnPressed,
       );
     }
     return Text("-");
