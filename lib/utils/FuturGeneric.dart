@@ -19,6 +19,6 @@ Future<dynamic> deleteDynamic(int id) async {
     "Accept": "application/json",
   });
   final response = await request.send();
-  if (response.statusCode != 200) return Future.error("error: status code ${response.statusCode}");
+  if (response.statusCode != 204) return Future.error("error: status code ${response.statusCode}");
   return await response.stream.bytesToString();
 }
