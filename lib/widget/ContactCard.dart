@@ -48,7 +48,7 @@ class ContactCard extends StatelessWidget {
             children: [
               TextButtonConditional(person.phone, "Phone", () => _launchPhoneURL(context, person.phone)),
               const SizedBox(width: 8),
-              TextButtonConditional(person.email, "email", () => _launchMailURL(context, person.email)),
+              TextButtonConditional(person.email, "demail", () => _launchMailURL(context, person.email)),
               const SizedBox(width: 8),
             ],
           ),
